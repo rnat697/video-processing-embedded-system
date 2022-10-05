@@ -1,0 +1,1 @@
+set_global_assignment -name QIP_FILE [file join $::quartus(qip_path) assign2_system/assign2_system.qip]

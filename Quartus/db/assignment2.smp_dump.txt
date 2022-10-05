@@ -1,0 +1,82 @@
+
+State Machine - |assignment2|assign2_system:inst|assign2_system_sdram:sdram|m_next
+Name m_next.010000000 m_next.000010000 m_next.000001000 m_next.000000001 
+m_next.000000001 0 0 0 0 
+m_next.000001000 0 0 1 1 
+m_next.000010000 0 1 0 1 
+m_next.010000000 1 0 0 1 
+
+State Machine - |assignment2|assign2_system:inst|assign2_system_sdram:sdram|m_state
+Name m_state.100000000 m_state.010000000 m_state.001000000 m_state.000100000 m_state.000010000 m_state.000001000 m_state.000000100 m_state.000000010 m_state.000000001 
+m_state.000000001 0 0 0 0 0 0 0 0 0 
+m_state.000000010 0 0 0 0 0 0 0 1 1 
+m_state.000000100 0 0 0 0 0 0 1 0 1 
+m_state.000001000 0 0 0 0 0 1 0 0 1 
+m_state.000010000 0 0 0 0 1 0 0 0 1 
+m_state.000100000 0 0 0 1 0 0 0 0 1 
+m_state.001000000 0 0 1 0 0 0 0 0 1 
+m_state.010000000 0 1 0 0 0 0 0 0 1 
+m_state.100000000 1 0 0 0 0 0 0 0 1 
+
+State Machine - |assignment2|assign2_system:inst|assign2_system_sdram:sdram|i_next
+Name i_next.111 i_next.101 i_next.010 i_next.000 
+i_next.000 0 0 0 0 
+i_next.010 0 0 1 1 
+i_next.101 0 1 0 1 
+i_next.111 1 0 0 1 
+
+State Machine - |assignment2|assign2_system:inst|assign2_system_sdram:sdram|i_state
+Name i_state.111 i_state.101 i_state.011 i_state.010 i_state.001 i_state.000 
+i_state.000 0 0 0 0 0 0 
+i_state.001 0 0 0 0 1 1 
+i_state.010 0 0 0 1 0 1 
+i_state.011 0 0 1 0 0 1 
+i_state.101 0 1 0 0 0 1 
+i_state.111 1 0 0 0 0 1 
+
+State Machine - |assignment2|assign2_system:inst|assign2_system_cpu:cpu|assign2_system_cpu_cpu:cpu|assign2_system_cpu_cpu_nios2_oci:the_assign2_system_cpu_cpu_nios2_oci|assign2_system_cpu_cpu_debug_slave_wrapper:the_assign2_system_cpu_cpu_debug_slave_wrapper|assign2_system_cpu_cpu_debug_slave_tck:the_assign2_system_cpu_cpu_debug_slave_tck|DRsize
+Name DRsize.101 DRsize.100 DRsize.011 DRsize.010 DRsize.001 DRsize.000 
+DRsize.000 0 0 0 0 0 0 
+DRsize.001 0 0 0 0 1 1 
+DRsize.010 0 0 0 1 0 1 
+DRsize.011 0 0 1 0 0 1 
+DRsize.100 0 1 0 0 0 1 
+DRsize.101 1 0 0 0 0 1 
+
+State Machine - |assignment2|assign2_system:inst|assign2_system_alt_vip_cl_tpg_0:alt_vip_cl_tpg_0|alt_vip_video_output_bridge:video_out|state
+Name state.TERMINATE state.CONCATENATE state.WAIT_FOR_COMMAND state.SEND_EMPTY_PACKET state.SEND_PACKET state.SEND_PACKET_SOP state.SEND_CONTROL_PACKET state.IDLE 
+state.IDLE 0 0 0 0 0 0 0 0 
+state.SEND_CONTROL_PACKET 0 0 0 0 0 0 1 1 
+state.SEND_PACKET_SOP 0 0 0 0 0 1 0 1 
+state.SEND_PACKET 0 0 0 0 1 0 0 1 
+state.SEND_EMPTY_PACKET 0 0 0 1 0 0 0 1 
+state.WAIT_FOR_COMMAND 0 0 1 0 0 0 0 1 
+state.CONCATENATE 0 1 0 0 0 0 0 1 
+state.TERMINATE 1 0 0 0 0 0 0 1 
+
+State Machine - |assignment2|assign2_system:inst|assign2_system_alt_vip_cl_tpg_0:alt_vip_cl_tpg_0|alt_vip_video_output_bridge:video_out|alt_vip_common_video_packet_encode:video_output|state
+Name state.SEND_PACKET state.SEND_EMPTY_PACKET state.TYPE_11_PACKET state.CONTROL_FINAL state.CONTROL_PACKET state.IDLE 
+state.IDLE 0 0 0 0 0 0 
+state.CONTROL_PACKET 0 0 0 0 1 1 
+state.CONTROL_FINAL 0 0 0 1 0 1 
+state.TYPE_11_PACKET 0 0 1 0 0 1 
+state.SEND_EMPTY_PACKET 0 1 0 0 0 1 
+state.SEND_PACKET 1 0 0 0 0 1 
+
+State Machine - |assignment2|assign2_system:inst|assign2_system_alt_vip_cl_tpg_0:alt_vip_cl_tpg_0|assign2_system_alt_vip_cl_tpg_0_scheduler:scheduler|alt_vip_tpg_multi_scheduler:tpg_multi_scheduler_inst|state
+Name state.EOF_CHECK state.SEND_VOB_CMD state.SEND_MUX_CMD state.SEND_AC_CMD state.SEND_CTRL_CMD state.SEND_SETUP_CMD state.STOPPED state.IDLE 
+state.IDLE 0 0 0 0 0 0 0 0 
+state.STOPPED 0 0 0 0 0 0 1 1 
+state.SEND_SETUP_CMD 0 0 0 0 0 1 0 1 
+state.SEND_CTRL_CMD 0 0 0 0 1 0 0 1 
+state.SEND_AC_CMD 0 0 0 1 0 0 0 1 
+state.SEND_MUX_CMD 0 0 1 0 0 0 0 1 
+state.SEND_VOB_CMD 0 1 0 0 0 0 0 1 
+state.EOF_CHECK 1 0 0 0 0 0 0 1 
+
+State Machine - |assignment2|assign2_system:inst|assign2_system_alt_vip_cl_tpg_0:alt_vip_cl_tpg_0|alt_vip_tpg_bars_alg_core:core_0|state
+Name state.RUN state.INIT2 state.INIT1 state.IDLE 
+state.IDLE 0 0 0 0 
+state.INIT1 0 0 1 1 
+state.INIT2 0 1 0 1 
+state.RUN 1 0 0 1 
