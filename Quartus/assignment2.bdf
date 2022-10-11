@@ -74,7 +74,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect 32 1176 200 1192)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "UART_RXD" (rect 5 0 63 12)(font "Arial" ))
+	(text "UART_RXD" (rect 5 0 62 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -91,7 +91,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect 32 928 200 944)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "KEY[3]" (rect 5 0 41 12)(font "Arial" ))
+	(text "KEY[3]" (rect 5 0 40 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -248,7 +248,7 @@ refer to the applicable agreement for further details.
 	(output)
 	(rect 0 968 200 984)
 	(text "OUTPUT" (rect 161 6 199 16)(font "Arial" (font_size 6)))
-	(text "DRAM_ADDR[11..0]" (rect 5 4 107 16)(font "Arial" ))
+	(text "DRAM_ADDR[11..0]" (rect 5 4 106 16)(font "Arial" ))
 	(pt 200 8)
 	(drawing
 		(line (pt 200 8)(pt 148 8))
@@ -266,7 +266,7 @@ refer to the applicable agreement for further details.
 	(output)
 	(rect 24 984 200 1000)
 	(text "OUTPUT" (rect 137 6 175 16)(font "Arial" (font_size 6)))
-	(text "DRAM_BA[1..0]" (rect 5 4 83 16)(font "Arial" ))
+	(text "DRAM_BA[1..0]" (rect 5 4 82 16)(font "Arial" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 176 8)(pt 124 8))
@@ -284,7 +284,7 @@ refer to the applicable agreement for further details.
 	(output)
 	(rect 24 1000 200 1016)
 	(text "OUTPUT" (rect 137 6 175 16)(font "Arial" (font_size 6)))
-	(text "DRAM_CAS_N " (rect 5 4 83 16)(font "Arial" ))
+	(text "DRAM_CAS_N " (rect 5 4 82 16)(font "Arial" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 176 8)(pt 124 8))
@@ -302,7 +302,7 @@ refer to the applicable agreement for further details.
 	(output)
 	(rect 24 1016 200 1032)
 	(text "OUTPUT" (rect 137 6 175 16)(font "Arial" (font_size 6)))
-	(text "DRAM_CKE" (rect 5 4 66 16)(font "Arial" ))
+	(text "DRAM_CKE" (rect 5 4 65 16)(font "Arial" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 176 8)(pt 124 8))
@@ -320,7 +320,7 @@ refer to the applicable agreement for further details.
 	(output)
 	(rect 24 1032 200 1048)
 	(text "OUTPUT" (rect 137 6 175 16)(font "Arial" (font_size 6)))
-	(text "DRAM_CS_N" (rect 5 4 73 16)(font "Arial" ))
+	(text "DRAM_CS_N" (rect 5 4 72 16)(font "Arial" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 176 8)(pt 124 8))
@@ -338,7 +338,7 @@ refer to the applicable agreement for further details.
 	(output)
 	(rect 8 1064 200 1080)
 	(text "OUTPUT" (rect 153 6 191 16)(font "Arial" (font_size 6)))
-	(text "DRAM_DQM[1..0]" (rect 5 4 94 16)(font "Arial" ))
+	(text "DRAM_DQM[1..0]" (rect 5 4 93 16)(font "Arial" ))
 	(pt 192 8)
 	(drawing
 		(line (pt 192 8)(pt 140 8))
@@ -356,7 +356,7 @@ refer to the applicable agreement for further details.
 	(output)
 	(rect 24 1080 200 1096)
 	(text "OUTPUT" (rect 137 6 175 16)(font "Arial" (font_size 6)))
-	(text "DRAM_RAS_N" (rect 5 4 80 16)(font "Arial" ))
+	(text "DRAM_RAS_N" (rect 5 4 79 16)(font "Arial" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 176 8)(pt 124 8))
@@ -374,7 +374,7 @@ refer to the applicable agreement for further details.
 	(output)
 	(rect 24 1096 200 1112)
 	(text "OUTPUT" (rect 137 6 175 16)(font "Arial" (font_size 6)))
-	(text "DRAM_WE_N" (rect 5 4 75 16)(font "Arial" ))
+	(text "DRAM_WE_N" (rect 5 4 74 16)(font "Arial" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 176 8)(pt 124 8))
@@ -392,7 +392,7 @@ refer to the applicable agreement for further details.
 	(output)
 	(rect 24 1328 200 1344)
 	(text "OUTPUT" (rect 137 6 175 16)(font "Arial" (font_size 6)))
-	(text "VGA_G[7..0]" (rect 5 4 68 16)(font "Arial" ))
+	(text "VGA_G[7..0]" (rect 5 4 67 16)(font "Arial" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 176 8)(pt 124 8))
@@ -410,7 +410,7 @@ refer to the applicable agreement for further details.
 	(output)
 	(rect 24 1312 200 1328)
 	(text "OUTPUT" (rect 137 6 175 16)(font "Arial" (font_size 6)))
-	(text "VGA_R[7..0]" (rect 5 4 68 16)(font "Arial" ))
+	(text "VGA_R[7..0]" (rect 5 4 67 16)(font "Arial" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 176 8)(pt 124 8))
@@ -428,7 +428,7 @@ refer to the applicable agreement for further details.
 	(output)
 	(rect 24 1296 200 1312)
 	(text "OUTPUT" (rect 137 6 175 16)(font "Arial" (font_size 6)))
-	(text "VGA_SYNC_N" (rect 5 4 80 16)(font "Arial" ))
+	(text "VGA_SYNC_N" (rect 5 4 79 16)(font "Arial" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 176 8)(pt 124 8))
@@ -446,7 +446,7 @@ refer to the applicable agreement for further details.
 	(output)
 	(rect 24 1280 200 1296)
 	(text "OUTPUT" (rect 137 6 175 16)(font "Arial" (font_size 6)))
-	(text "VGA_BLANK_N" (rect 5 4 83 16)(font "Arial" ))
+	(text "VGA_BLANK_N" (rect 5 4 82 16)(font "Arial" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 176 8)(pt 124 8))
@@ -464,7 +464,7 @@ refer to the applicable agreement for further details.
 	(output)
 	(rect 24 1264 200 1280)
 	(text "OUTPUT" (rect 137 6 175 16)(font "Arial" (font_size 6)))
-	(text "VGA_VS" (rect 5 4 48 16)(font "Arial" ))
+	(text "VGA_VS" (rect 5 4 47 16)(font "Arial" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 176 8)(pt 124 8))
@@ -482,7 +482,7 @@ refer to the applicable agreement for further details.
 	(output)
 	(rect 24 1248 200 1264)
 	(text "OUTPUT" (rect 137 6 175 16)(font "Arial" (font_size 6)))
-	(text "VGA_HS" (rect 5 4 49 16)(font "Arial" ))
+	(text "VGA_HS" (rect 5 4 48 16)(font "Arial" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 176 8)(pt 124 8))
@@ -500,7 +500,7 @@ refer to the applicable agreement for further details.
 	(output)
 	(rect 24 1232 200 1248)
 	(text "OUTPUT" (rect 137 6 175 16)(font "Arial" (font_size 6)))
-	(text "VGA_CLK" (rect 5 4 55 16)(font "Arial" ))
+	(text "VGA_CLK" (rect 5 4 54 16)(font "Arial" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 176 8)(pt 124 8))
@@ -518,7 +518,7 @@ refer to the applicable agreement for further details.
 	(bidir)
 	(rect 8 1048 200 1064)
 	(text "BIDIR" (rect 167 6 191 16)(font "Arial" (font_size 6)))
-	(text "DRAM_DQ[15..0]" (rect 5 4 92 16)(font "Arial" ))
+	(text "DRAM_DQ[15..0]" (rect 5 4 91 16)(font "Arial" ))
 	(pt 192 8)
 	(drawing
 		(line (pt 136 12)(pt 114 12))
@@ -537,7 +537,7 @@ refer to the applicable agreement for further details.
 	(bidir)
 	(rect 16 792 200 808)
 	(text "BIDIR" (rect 159 6 183 16)(font "Arial" (font_size 6)))
-	(text "LCD_DATA[7..0]" (rect 5 4 88 16)(font "Arial" ))
+	(text "LCD_DATA[7..0]" (rect 5 4 87 16)(font "Arial" ))
 	(pt 184 8)
 	(drawing
 		(line (pt 128 12)(pt 106 12))

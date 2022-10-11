@@ -9,6 +9,14 @@
    categories="System" />
  <parameter name="bonusData"><![CDATA[bonusData 
 {
+   element alt_vip_cl_2dfir_0
+   {
+      datum _sortIndex
+      {
+         value = "19";
+         type = "int";
+      }
+   }
    element alt_vip_cl_tpg_0
    {
       datum _sortIndex
@@ -343,7 +351,7 @@
 }
 ]]></parameter>
  <parameter name="clockCrossingAdapter" value="HANDSHAKE" />
- <parameter name="device" value="EP4CE10E22A7" />
+ <parameter name="device" value="EP4CE115F29C7" />
  <parameter name="deviceFamily" value="Cyclone IV E" />
  <parameter name="deviceSpeedGrade" value="7" />
  <parameter name="fabricMode" value="QSYS" />
@@ -401,11 +409,55 @@
    type="conduit"
    dir="end" />
  <module
+   name="alt_vip_cl_2dfir_0"
+   kind="alt_vip_cl_2dfir"
+   version="18.1"
+   enabled="1">
+  <parameter name="ALGORITHM_NAME" value="STANDARD_FIR" />
+  <parameter name="AUTO_DEVICE" value="EP4CE115F29C7" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
+  <parameter name="BITS_PER_SYMBOL_IN" value="8" />
+  <parameter name="BITS_PER_SYMBOL_OUT" value="8" />
+  <parameter name="COEFF_FRACTION_BITS" value="7" />
+  <parameter name="COEFF_INTEGER_BITS" value="1" />
+  <parameter name="COEFF_SIGNED" value="1" />
+  <parameter name="COLOR_PLANES_ARE_IN_PARALLEL" value="1" />
+  <parameter name="DEFAULT_LOWER_BLUR" value="0" />
+  <parameter name="DEFAULT_UPPER_BLUR" value="15" />
+  <parameter name="DIAG_SYMMETRIC" value="0" />
+  <parameter name="DO_MIRRORING" value="1" />
+  <parameter name="ENABLE_WIDE_BLUR_SHARPEN" value="1" />
+  <parameter name="EXTRA_PIPELINING" value="0" />
+  <parameter name="FAMILY" value="Cyclone IV E" />
+  <parameter name="FIXED_COEFF_FILE">\\files.auckland.ac.nz\myhome\Documents\GitHub\video-processing-group-10\Quartus\Filter1.txt</parameter>
+  <parameter name="H_SYMMETRIC" value="0" />
+  <parameter name="H_TAPS" value="8" />
+  <parameter name="INPUT_GUARD_BANDS_ENABLE" value="0" />
+  <parameter name="INPUT_GUARD_BAND_LOWER" value="0" />
+  <parameter name="INPUT_GUARD_BAND_UPPER" value="255" />
+  <parameter name="IS_422" value="0" />
+  <parameter name="LIMITED_READBACK" value="0" />
+  <parameter name="MAX_HEIGHT" value="480" />
+  <parameter name="MAX_WIDTH" value="640" />
+  <parameter name="MOVE_BINARY_POINT_RIGHT" value="0" />
+  <parameter name="NO_BLANKING" value="0" />
+  <parameter name="NUMBER_OF_COLOR_PLANES" value="3" />
+  <parameter name="OUTPUT_GUARD_BANDS_ENABLE" value="1" />
+  <parameter name="OUTPUT_GUARD_BAND_LOWER" value="0" />
+  <parameter name="OUTPUT_GUARD_BAND_UPPER" value="255" />
+  <parameter name="PIXELS_IN_PARALLEL" value="1" />
+  <parameter name="ROUNDING_METHOD" value="ROUND_HALF_UP" />
+  <parameter name="RUNTIME_CONTROL" value="0" />
+  <parameter name="USER_PACKET_SUPPORT" value="PASSTHROUGH" />
+  <parameter name="V_SYMMETRIC" value="0" />
+  <parameter name="V_TAPS" value="8" />
+ </module>
+ <module
    name="alt_vip_cl_tpg_0"
    kind="alt_vip_cl_tpg"
    version="18.1"
    enabled="1">
-  <parameter name="AUTO_DEVICE" value="EP4CE10E22A7" />
+  <parameter name="AUTO_DEVICE" value="EP4CE115F29C7" />
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
   <parameter name="BITS_PER_SYMBOL" value="8" />
   <parameter name="COLOR_PLANES_ARE_IN_PARALLEL" value="1" />
@@ -450,7 +502,7 @@
  <module name="cpu" kind="altera_nios2_gen2" version="18.1" enabled="1">
   <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="4" />
   <parameter name="AUTO_CLK_RESET_DOMAIN" value="4" />
-  <parameter name="AUTO_DEVICE" value="EP4CE10E22A7" />
+  <parameter name="AUTO_DEVICE" value="EP4CE115F29C7" />
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
   <parameter name="bht_ramBlockType" value="Automatic" />
   <parameter name="breakOffset" value="32" />
@@ -767,7 +819,7 @@
    kind="altera_up_avalon_sys_sdram_pll"
    version="18.0"
    enabled="1">
-  <parameter name="AUTO_DEVICE" value="EP4CE10E22A7" />
+  <parameter name="AUTO_DEVICE" value="EP4CE115F29C7" />
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
   <parameter name="CIII_boards" value="DE0" />
   <parameter name="CIV_boards" value="DE2-115" />
@@ -834,7 +886,7 @@
    kind="altera_up_avalon_video_pll"
    version="18.0"
    enabled="1">
-  <parameter name="AUTO_DEVICE" value="EP4CE10E22A7" />
+  <parameter name="AUTO_DEVICE" value="EP4CE115F29C7" />
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
   <parameter name="camera">5MP Digital Camera (THDB_D5M)</parameter>
   <parameter name="device_family" value="Cyclone IV E" />
@@ -1005,8 +1057,13 @@
  <connection
    kind="avalon_streaming"
    version="18.1"
-   start="alt_vip_cl_tpg_0.dout"
+   start="alt_vip_cl_2dfir_0.dout"
    end="video_rgb_resampler_0.avalon_rgb_sink" />
+ <connection
+   kind="avalon_streaming"
+   version="18.1"
+   start="alt_vip_cl_tpg_0.dout"
+   end="alt_vip_cl_2dfir_0.din" />
  <connection
    kind="clock"
    version="18.1"
@@ -1095,6 +1152,11 @@
  <connection
    kind="clock"
    version="18.1"
+   start="sys_sdram_pll_0.sys_clk"
+   end="alt_vip_cl_2dfir_0.main_clock" />
+ <connection
+   kind="clock"
+   version="18.1"
    start="video_pll_0.vga_clk"
    end="video_vga_controller_0.clk" />
  <connection
@@ -1122,6 +1184,11 @@
    version="18.1"
    start="clk_0.clk_reset"
    end="alt_vip_cl_tpg_0.main_reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_0.clk_reset"
+   end="alt_vip_cl_2dfir_0.main_reset" />
  <connection
    kind="reset"
    version="18.1"

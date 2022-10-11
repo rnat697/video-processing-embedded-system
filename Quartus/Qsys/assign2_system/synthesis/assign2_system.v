@@ -46,7 +46,12 @@ module assign2_system (
 	wire         video_rgb_resampler_0_avalon_rgb_source_ready;                     // video_dual_clock_buffer_0:stream_in_ready -> video_rgb_resampler_0:stream_out_ready
 	wire         video_rgb_resampler_0_avalon_rgb_source_startofpacket;             // video_rgb_resampler_0:stream_out_startofpacket -> video_dual_clock_buffer_0:stream_in_startofpacket
 	wire         video_rgb_resampler_0_avalon_rgb_source_endofpacket;               // video_rgb_resampler_0:stream_out_endofpacket -> video_dual_clock_buffer_0:stream_in_endofpacket
-	wire         sys_sdram_pll_0_sys_clk_clk;                                       // sys_sdram_pll_0:sys_clk_clk -> [alt_vip_cl_tpg_0:main_clock, avalon_st_adapter:in_clk_0_clk, cpu:clk, irq_mapper:clk, jtag_uart:clk, keys:clk, lcd:clk, leds_green:clk, leds_red:clk, mm_interconnect_0:sys_sdram_pll_0_sys_clk_clk, onchip_mem:clk, rst_controller:clk, sdram:clk, switches:clk, timer_0:clk, timer_1:clk, uart:clk, video_dual_clock_buffer_0:clk_stream_in, video_rgb_resampler_0:clk]
+	wire         alt_vip_cl_tpg_0_dout_valid;                                       // alt_vip_cl_tpg_0:dout_valid -> alt_vip_cl_2dfir_0:din_valid
+	wire  [23:0] alt_vip_cl_tpg_0_dout_data;                                        // alt_vip_cl_tpg_0:dout_data -> alt_vip_cl_2dfir_0:din_data
+	wire         alt_vip_cl_tpg_0_dout_ready;                                       // alt_vip_cl_2dfir_0:din_ready -> alt_vip_cl_tpg_0:dout_ready
+	wire         alt_vip_cl_tpg_0_dout_startofpacket;                               // alt_vip_cl_tpg_0:dout_startofpacket -> alt_vip_cl_2dfir_0:din_startofpacket
+	wire         alt_vip_cl_tpg_0_dout_endofpacket;                                 // alt_vip_cl_tpg_0:dout_endofpacket -> alt_vip_cl_2dfir_0:din_endofpacket
+	wire         sys_sdram_pll_0_sys_clk_clk;                                       // sys_sdram_pll_0:sys_clk_clk -> [alt_vip_cl_2dfir_0:main_clock, alt_vip_cl_tpg_0:main_clock, avalon_st_adapter:in_clk_0_clk, cpu:clk, irq_mapper:clk, jtag_uart:clk, keys:clk, lcd:clk, leds_green:clk, leds_red:clk, mm_interconnect_0:sys_sdram_pll_0_sys_clk_clk, onchip_mem:clk, rst_controller:clk, sdram:clk, switches:clk, timer_0:clk, timer_1:clk, uart:clk, video_dual_clock_buffer_0:clk_stream_in, video_rgb_resampler_0:clk]
 	wire         video_pll_0_vga_clk_clk;                                           // video_pll_0:vga_clk_clk -> [rst_controller_002:clk, video_dual_clock_buffer_0:clk_stream_out, video_vga_controller_0:clk]
 	wire  [31:0] cpu_data_master_readdata;                                          // mm_interconnect_0:cpu_data_master_readdata -> cpu:d_readdata
 	wire         cpu_data_master_waitrequest;                                       // mm_interconnect_0:cpu_data_master_waitrequest -> cpu:d_waitrequest
@@ -141,21 +146,36 @@ module assign2_system (
 	wire         irq_mapper_receiver3_irq;                                          // timer_1:irq -> irq_mapper:receiver3_irq
 	wire         irq_mapper_receiver4_irq;                                          // keys:irq -> irq_mapper:receiver4_irq
 	wire  [31:0] cpu_irq_irq;                                                       // irq_mapper:sender_irq -> cpu:irq
-	wire         alt_vip_cl_tpg_0_dout_valid;                                       // alt_vip_cl_tpg_0:dout_valid -> avalon_st_adapter:in_0_valid
-	wire  [23:0] alt_vip_cl_tpg_0_dout_data;                                        // alt_vip_cl_tpg_0:dout_data -> avalon_st_adapter:in_0_data
-	wire         alt_vip_cl_tpg_0_dout_ready;                                       // avalon_st_adapter:in_0_ready -> alt_vip_cl_tpg_0:dout_ready
-	wire         alt_vip_cl_tpg_0_dout_startofpacket;                               // alt_vip_cl_tpg_0:dout_startofpacket -> avalon_st_adapter:in_0_startofpacket
-	wire         alt_vip_cl_tpg_0_dout_endofpacket;                                 // alt_vip_cl_tpg_0:dout_endofpacket -> avalon_st_adapter:in_0_endofpacket
+	wire         alt_vip_cl_2dfir_0_dout_valid;                                     // alt_vip_cl_2dfir_0:dout_valid -> avalon_st_adapter:in_0_valid
+	wire  [23:0] alt_vip_cl_2dfir_0_dout_data;                                      // alt_vip_cl_2dfir_0:dout_data -> avalon_st_adapter:in_0_data
+	wire         alt_vip_cl_2dfir_0_dout_ready;                                     // avalon_st_adapter:in_0_ready -> alt_vip_cl_2dfir_0:dout_ready
+	wire         alt_vip_cl_2dfir_0_dout_startofpacket;                             // alt_vip_cl_2dfir_0:dout_startofpacket -> avalon_st_adapter:in_0_startofpacket
+	wire         alt_vip_cl_2dfir_0_dout_endofpacket;                               // alt_vip_cl_2dfir_0:dout_endofpacket -> avalon_st_adapter:in_0_endofpacket
 	wire         avalon_st_adapter_out_0_valid;                                     // avalon_st_adapter:out_0_valid -> video_rgb_resampler_0:stream_in_valid
 	wire  [23:0] avalon_st_adapter_out_0_data;                                      // avalon_st_adapter:out_0_data -> video_rgb_resampler_0:stream_in_data
 	wire         avalon_st_adapter_out_0_ready;                                     // video_rgb_resampler_0:stream_in_ready -> avalon_st_adapter:out_0_ready
 	wire         avalon_st_adapter_out_0_startofpacket;                             // avalon_st_adapter:out_0_startofpacket -> video_rgb_resampler_0:stream_in_startofpacket
 	wire         avalon_st_adapter_out_0_endofpacket;                               // avalon_st_adapter:out_0_endofpacket -> video_rgb_resampler_0:stream_in_endofpacket
-	wire         rst_controller_reset_out_reset;                                    // rst_controller:reset_out -> [alt_vip_cl_tpg_0:main_reset, avalon_st_adapter:in_rst_0_reset, cpu:reset_n, irq_mapper:reset, jtag_uart:rst_n, keys:reset_n, lcd:reset_n, leds_green:reset_n, leds_red:reset_n, mm_interconnect_0:cpu_reset_reset_bridge_in_reset_reset, onchip_mem:reset, rst_translator:in_reset, sdram:reset_n, switches:reset_n, timer_0:reset_n, timer_1:reset_n, uart:reset_n, video_dual_clock_buffer_0:reset_stream_in, video_rgb_resampler_0:reset]
+	wire         rst_controller_reset_out_reset;                                    // rst_controller:reset_out -> [alt_vip_cl_2dfir_0:main_reset, alt_vip_cl_tpg_0:main_reset, avalon_st_adapter:in_rst_0_reset, cpu:reset_n, irq_mapper:reset, jtag_uart:rst_n, keys:reset_n, lcd:reset_n, leds_green:reset_n, leds_red:reset_n, mm_interconnect_0:cpu_reset_reset_bridge_in_reset_reset, onchip_mem:reset, rst_translator:in_reset, sdram:reset_n, switches:reset_n, timer_0:reset_n, timer_1:reset_n, uart:reset_n, video_dual_clock_buffer_0:reset_stream_in, video_rgb_resampler_0:reset]
 	wire         rst_controller_reset_out_reset_req;                                // rst_controller:reset_req -> [cpu:reset_req, onchip_mem:reset_req, rst_translator:reset_req_in]
 	wire         rst_controller_001_reset_out_reset;                                // rst_controller_001:reset_out -> [sys_sdram_pll_0:ref_reset_reset, video_pll_0:ref_reset_reset]
 	wire         rst_controller_002_reset_out_reset;                                // rst_controller_002:reset_out -> [video_dual_clock_buffer_0:reset_stream_out, video_vga_controller_0:reset]
 	wire         video_pll_0_reset_source_reset;                                    // video_pll_0:reset_source_reset -> rst_controller_002:reset_in0
+
+	assign2_system_alt_vip_cl_2dfir_0 alt_vip_cl_2dfir_0 (
+		.main_clock         (sys_sdram_pll_0_sys_clk_clk),           // main_clock.clk
+		.main_reset         (rst_controller_reset_out_reset),        // main_reset.reset
+		.din_data           (alt_vip_cl_tpg_0_dout_data),            //        din.data
+		.din_valid          (alt_vip_cl_tpg_0_dout_valid),           //           .valid
+		.din_startofpacket  (alt_vip_cl_tpg_0_dout_startofpacket),   //           .startofpacket
+		.din_endofpacket    (alt_vip_cl_tpg_0_dout_endofpacket),     //           .endofpacket
+		.din_ready          (alt_vip_cl_tpg_0_dout_ready),           //           .ready
+		.dout_data          (alt_vip_cl_2dfir_0_dout_data),          //       dout.data
+		.dout_valid         (alt_vip_cl_2dfir_0_dout_valid),         //           .valid
+		.dout_startofpacket (alt_vip_cl_2dfir_0_dout_startofpacket), //           .startofpacket
+		.dout_endofpacket   (alt_vip_cl_2dfir_0_dout_endofpacket),   //           .endofpacket
+		.dout_ready         (alt_vip_cl_2dfir_0_dout_ready)          //           .ready
+	);
 
 	assign2_system_alt_vip_cl_tpg_0 #(
 		.PIXELS_IN_PARALLEL (1)
@@ -534,11 +554,11 @@ module assign2_system (
 	) avalon_st_adapter (
 		.in_clk_0_clk        (sys_sdram_pll_0_sys_clk_clk),           // in_clk_0.clk
 		.in_rst_0_reset      (rst_controller_reset_out_reset),        // in_rst_0.reset
-		.in_0_data           (alt_vip_cl_tpg_0_dout_data),            //     in_0.data
-		.in_0_valid          (alt_vip_cl_tpg_0_dout_valid),           //         .valid
-		.in_0_ready          (alt_vip_cl_tpg_0_dout_ready),           //         .ready
-		.in_0_startofpacket  (alt_vip_cl_tpg_0_dout_startofpacket),   //         .startofpacket
-		.in_0_endofpacket    (alt_vip_cl_tpg_0_dout_endofpacket),     //         .endofpacket
+		.in_0_data           (alt_vip_cl_2dfir_0_dout_data),          //     in_0.data
+		.in_0_valid          (alt_vip_cl_2dfir_0_dout_valid),         //         .valid
+		.in_0_ready          (alt_vip_cl_2dfir_0_dout_ready),         //         .ready
+		.in_0_startofpacket  (alt_vip_cl_2dfir_0_dout_startofpacket), //         .startofpacket
+		.in_0_endofpacket    (alt_vip_cl_2dfir_0_dout_endofpacket),   //         .endofpacket
 		.out_0_data          (avalon_st_adapter_out_0_data),          //    out_0.data
 		.out_0_valid         (avalon_st_adapter_out_0_valid),         //         .valid
 		.out_0_ready         (avalon_st_adapter_out_0_ready),         //         .ready
