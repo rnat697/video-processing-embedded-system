@@ -42,7 +42,7 @@ module assign2_system_alt_vip_cl_2dfir_0_alg_core
       input    wire   reset
    );
    
-   localparam  integer  FIXED_COEFFS  [0 : 80] =  '{128,  128,  128,  128,  128,  128,  128,  128,  128,
+   localparam  integer  FIXED_COEFFS  [0 : 80] =  '{-128,  -256,  -128,  0,  0,  0,  128,  255,  128,
                                                     0,  0, 0, 0, 0, 0, 0, 0, 0,
                                                     0, 0, 0, 0, 0, 0, 0, 0, 0,
                                                     0, 0, 0, 0, 0, 0, 0, 0, 0,

@@ -429,7 +429,7 @@
   <parameter name="ENABLE_WIDE_BLUR_SHARPEN" value="1" />
   <parameter name="EXTRA_PIPELINING" value="0" />
   <parameter name="FAMILY" value="Cyclone IV E" />
-  <parameter name="FIXED_COEFF_FILE">\\files.auckland.ac.nz\myhome\Documents\GitHub\video-processing-group-10\Quartus\Filter1.txt</parameter>
+  <parameter name="FIXED_COEFF_FILE">\\files.auckland.ac.nz\myhome\Documents\GitHub\video-processing-group-10\Quartus\pokeY.txt</parameter>
   <parameter name="H_SYMMETRIC" value="0" />
   <parameter name="H_TAPS" value="8" />
   <parameter name="INPUT_GUARD_BANDS_ENABLE" value="0" />

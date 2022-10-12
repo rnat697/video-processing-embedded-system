@@ -7,7 +7,6 @@
    <irq preferredWidth="34" />
   </columns>
  </systemtable>
- <library
-   expandedCategories="Library/DSP/Video and Image Processing,Library/DSP,Library,Project" />
- <window width="1100" height="800" x="392" y="155" />
+ <library expandedCategories="Library,Project" />
+ <window width="1444" height="903" x="14" y="165" />
 </preferences>
