@@ -2,12 +2,17 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="fir" key="selection"/>
+		<item value="pio" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="IORD_ALTERA_AVALON_PIO_DATA"/>
+			<item value="PIO_DATA"/>
+			<item value="IORD"/>
+			<item value="iord"/>
+			<item value="pio"/>
 			<item value="FIR"/>
 		</list>
 		<list key="replacehistory">
