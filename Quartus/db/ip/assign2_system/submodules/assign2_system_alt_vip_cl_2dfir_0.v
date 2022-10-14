@@ -7,18 +7,26 @@
 
 `timescale 1 ps / 1 ps
 module assign2_system_alt_vip_cl_2dfir_0 (
-		input  wire        main_clock,         // main_clock.clk
-		input  wire        main_reset,         // main_reset.reset
-		input  wire [23:0] din_data,           //        din.data
-		input  wire        din_valid,          //           .valid
-		input  wire        din_startofpacket,  //           .startofpacket
-		input  wire        din_endofpacket,    //           .endofpacket
-		output wire        din_ready,          //           .ready
-		output wire [23:0] dout_data,          //       dout.data
-		output wire        dout_valid,         //           .valid
-		output wire        dout_startofpacket, //           .startofpacket
-		output wire        dout_endofpacket,   //           .endofpacket
-		input  wire        dout_ready          //           .ready
+		input  wire        main_clock,            // main_clock.clk
+		input  wire        main_reset,            // main_reset.reset
+		input  wire [23:0] din_data,              //        din.data
+		input  wire        din_valid,             //           .valid
+		input  wire        din_startofpacket,     //           .startofpacket
+		input  wire        din_endofpacket,       //           .endofpacket
+		output wire        din_ready,             //           .ready
+		output wire [23:0] dout_data,             //       dout.data
+		output wire        dout_valid,            //           .valid
+		output wire        dout_startofpacket,    //           .startofpacket
+		output wire        dout_endofpacket,      //           .endofpacket
+		input  wire        dout_ready,            //           .ready
+		input  wire [8:0]  control_address,       //    control.address
+		input  wire [3:0]  control_byteenable,    //           .byteenable
+		input  wire        control_write,         //           .write
+		input  wire [31:0] control_writedata,     //           .writedata
+		input  wire        control_read,          //           .read
+		output wire [31:0] control_readdata,      //           .readdata
+		output wire        control_readdatavalid, //           .readdatavalid
+		output wire        control_waitrequest    //           .waitrequest
 	);
 
 	wire          scheduler_av_st_cmd_lb_valid;           // scheduler:av_st_cmd_lb_valid -> line_buffer:av_st_cmd_valid
@@ -37,7 +45,7 @@ module assign2_system_alt_vip_cl_2dfir_0 (
 	wire          alg_core_av_st_resp_startofpacket;      // alg_core:av_st_resp_startofpacket -> scheduler:av_st_resp_ac_startofpacket
 	wire          alg_core_av_st_resp_endofpacket;        // alg_core:av_st_resp_endofpacket -> scheduler:av_st_resp_ac_endofpacket
 	wire          line_buffer_av_st_dout_0_valid;         // line_buffer:av_st_dout_valid_0 -> alg_core:av_st_din_valid
-	wire  [223:0] line_buffer_av_st_dout_0_data;          // line_buffer:av_st_dout_data_0 -> alg_core:av_st_din_data
+	wire  [103:0] line_buffer_av_st_dout_0_data;          // line_buffer:av_st_dout_data_0 -> alg_core:av_st_din_data
 	wire          line_buffer_av_st_dout_0_ready;         // alg_core:av_st_din_ready -> line_buffer:av_st_dout_ready_0
 	wire          line_buffer_av_st_dout_0_startofpacket; // line_buffer:av_st_dout_startofpacket_0 -> alg_core:av_st_din_startofpacket
 	wire          line_buffer_av_st_dout_0_endofpacket;   // line_buffer:av_st_dout_endofpacket_0 -> alg_core:av_st_din_endofpacket
@@ -101,7 +109,12 @@ module assign2_system_alt_vip_cl_2dfir_0 (
 	wire          scheduler_av_st_cmd_mux_ready;          // output_mux:av_st_cmd_ready -> scheduler:av_st_cmd_mux_ready
 	wire          scheduler_av_st_cmd_mux_startofpacket;  // scheduler:av_st_cmd_mux_startofpacket -> output_mux:av_st_cmd_startofpacket
 	wire          scheduler_av_st_cmd_mux_endofpacket;    // scheduler:av_st_cmd_mux_endofpacket -> output_mux:av_st_cmd_endofpacket
-	wire  [223:0] line_buffer_av_st_dout_data;            // port fragment
+	wire          scheduler_av_st_coeff_valid;            // scheduler:av_st_coeff_valid -> alg_core:av_st_coeff_valid
+	wire   [35:0] scheduler_av_st_coeff_data;             // scheduler:av_st_coeff_data -> alg_core:av_st_coeff_data
+	wire          scheduler_av_st_coeff_ready;            // alg_core:av_st_coeff_ready -> scheduler:av_st_coeff_ready
+	wire          scheduler_av_st_coeff_startofpacket;    // scheduler:av_st_coeff_startofpacket -> alg_core:av_st_coeff_startofpacket
+	wire          scheduler_av_st_coeff_endofpacket;      // scheduler:av_st_coeff_endofpacket -> alg_core:av_st_coeff_endofpacket
+	wire  [103:0] line_buffer_av_st_dout_data;            // port fragment
 	wire    [0:0] line_buffer_av_st_dout_valid;           // port fragment
 	wire    [0:0] line_buffer_av_st_dout_startofpacket;   // port fragment
 	wire    [0:0] line_buffer_av_st_dout_endofpacket;     // port fragment
@@ -201,8 +214,8 @@ module assign2_system_alt_vip_cl_2dfir_0 (
 		.TRACK_LINE_LENGTH       (0),
 		.OUTPUT_MUX_SEL          ("NEW"),
 		.FIFO_SIZE               (4),
-		.KERNEL_SIZE_0           (8),
-		.KERNEL_CENTER_0         (3),
+		.KERNEL_SIZE_0           (3),
+		.KERNEL_CENTER_0         (1),
 		.KERNEL_SIZE_1           (8),
 		.KERNEL_START_1          (0),
 		.KERNEL_CENTER_1         (3),
@@ -249,32 +262,37 @@ module assign2_system_alt_vip_cl_2dfir_0 (
 		.av_st_dout_ready         (line_buffer_av_st_dout_0_ready),          //             .ready
 		.av_st_dout_startofpacket (line_buffer_av_st_dout_startofpacket[0]), //             .startofpacket
 		.av_st_dout_endofpacket   (line_buffer_av_st_dout_endofpacket[0]),   //             .endofpacket
-		.av_st_dout_data          (line_buffer_av_st_dout_data[223:0])       //             .data
+		.av_st_dout_data          (line_buffer_av_st_dout_data[103:0])       //             .data
 	);
 
 	assign2_system_alt_vip_cl_2dfir_0_alg_core alg_core (
-		.clock                    (main_clock),                             // main_clock.clk
-		.reset                    (main_reset),                             // main_reset.reset
-		.av_st_cmd_valid          (scheduler_av_st_cmd_ac_valid),           //  av_st_cmd.valid
-		.av_st_cmd_startofpacket  (scheduler_av_st_cmd_ac_startofpacket),   //           .startofpacket
-		.av_st_cmd_endofpacket    (scheduler_av_st_cmd_ac_endofpacket),     //           .endofpacket
-		.av_st_cmd_data           (scheduler_av_st_cmd_ac_data),            //           .data
-		.av_st_cmd_ready          (scheduler_av_st_cmd_ac_ready),           //           .ready
-		.av_st_din_valid          (line_buffer_av_st_dout_0_valid),         //  av_st_din.valid
-		.av_st_din_startofpacket  (line_buffer_av_st_dout_0_startofpacket), //           .startofpacket
-		.av_st_din_endofpacket    (line_buffer_av_st_dout_0_endofpacket),   //           .endofpacket
-		.av_st_din_data           (line_buffer_av_st_dout_0_data),          //           .data
-		.av_st_din_ready          (line_buffer_av_st_dout_0_ready),         //           .ready
-		.av_st_resp_valid         (alg_core_av_st_resp_valid),              // av_st_resp.valid
-		.av_st_resp_startofpacket (alg_core_av_st_resp_startofpacket),      //           .startofpacket
-		.av_st_resp_endofpacket   (alg_core_av_st_resp_endofpacket),        //           .endofpacket
-		.av_st_resp_data          (alg_core_av_st_resp_data),               //           .data
-		.av_st_resp_ready         (alg_core_av_st_resp_ready),              //           .ready
-		.av_st_dout_valid         (alg_core_av_st_dout_valid),              // av_st_dout.valid
-		.av_st_dout_startofpacket (alg_core_av_st_dout_startofpacket),      //           .startofpacket
-		.av_st_dout_endofpacket   (alg_core_av_st_dout_endofpacket),        //           .endofpacket
-		.av_st_dout_data          (alg_core_av_st_dout_data),               //           .data
-		.av_st_dout_ready         (alg_core_av_st_dout_ready)               //           .ready
+		.clock                     (main_clock),                             //  main_clock.clk
+		.reset                     (main_reset),                             //  main_reset.reset
+		.av_st_cmd_valid           (scheduler_av_st_cmd_ac_valid),           //   av_st_cmd.valid
+		.av_st_cmd_startofpacket   (scheduler_av_st_cmd_ac_startofpacket),   //            .startofpacket
+		.av_st_cmd_endofpacket     (scheduler_av_st_cmd_ac_endofpacket),     //            .endofpacket
+		.av_st_cmd_data            (scheduler_av_st_cmd_ac_data),            //            .data
+		.av_st_cmd_ready           (scheduler_av_st_cmd_ac_ready),           //            .ready
+		.av_st_din_valid           (line_buffer_av_st_dout_0_valid),         //   av_st_din.valid
+		.av_st_din_startofpacket   (line_buffer_av_st_dout_0_startofpacket), //            .startofpacket
+		.av_st_din_endofpacket     (line_buffer_av_st_dout_0_endofpacket),   //            .endofpacket
+		.av_st_din_data            (line_buffer_av_st_dout_0_data),          //            .data
+		.av_st_din_ready           (line_buffer_av_st_dout_0_ready),         //            .ready
+		.av_st_resp_valid          (alg_core_av_st_resp_valid),              //  av_st_resp.valid
+		.av_st_resp_startofpacket  (alg_core_av_st_resp_startofpacket),      //            .startofpacket
+		.av_st_resp_endofpacket    (alg_core_av_st_resp_endofpacket),        //            .endofpacket
+		.av_st_resp_data           (alg_core_av_st_resp_data),               //            .data
+		.av_st_resp_ready          (alg_core_av_st_resp_ready),              //            .ready
+		.av_st_dout_valid          (alg_core_av_st_dout_valid),              //  av_st_dout.valid
+		.av_st_dout_startofpacket  (alg_core_av_st_dout_startofpacket),      //            .startofpacket
+		.av_st_dout_endofpacket    (alg_core_av_st_dout_endofpacket),        //            .endofpacket
+		.av_st_dout_data           (alg_core_av_st_dout_data),               //            .data
+		.av_st_dout_ready          (alg_core_av_st_dout_ready),              //            .ready
+		.av_st_coeff_valid         (scheduler_av_st_coeff_valid),            // av_st_coeff.valid
+		.av_st_coeff_startofpacket (scheduler_av_st_coeff_startofpacket),    //            .startofpacket
+		.av_st_coeff_endofpacket   (scheduler_av_st_coeff_endofpacket),      //            .endofpacket
+		.av_st_coeff_data          (scheduler_av_st_coeff_data),             //            .data
+		.av_st_coeff_ready         (scheduler_av_st_coeff_ready)             //            .ready
 	);
 
 	alt_vip_fir_scheduler #(
@@ -285,12 +303,12 @@ module assign2_system_alt_vip_cl_2dfir_0 (
 		.DEFAULT_SEARCH_RANGE  (5),
 		.DEFAULT_UPPER_BLUR    (15),
 		.DEFAULT_LOWER_BLUR    (0),
-		.V_TAPS                (8),
-		.UPDATE_TAPS           (64),
-		.COEFF_WIDTH           (9),
+		.V_TAPS                (3),
+		.UPDATE_TAPS           (9),
+		.COEFF_WIDTH           (4),
 		.NO_BLANKING           (0),
 		.PIPELINE_READY        (0),
-		.RUNTIME_CONTROL       (0),
+		.RUNTIME_CONTROL       (1),
 		.LIMITED_READBACK      (0),
 		.USER_PACKET_SUPPORT   ("PASSTHROUGH")
 	) scheduler (
@@ -330,7 +348,20 @@ module assign2_system_alt_vip_cl_2dfir_0 (
 		.av_st_cmd_vob_startofpacket  (scheduler_av_st_cmd_vob_startofpacket),  //               .startofpacket
 		.av_st_cmd_vob_endofpacket    (scheduler_av_st_cmd_vob_endofpacket),    //               .endofpacket
 		.av_st_cmd_vob_data           (scheduler_av_st_cmd_vob_data),           //               .data
-		.av_st_cmd_vob_ready          (scheduler_av_st_cmd_vob_ready)           //               .ready
+		.av_st_cmd_vob_ready          (scheduler_av_st_cmd_vob_ready),          //               .ready
+		.av_st_coeff_valid            (scheduler_av_st_coeff_valid),            //    av_st_coeff.valid
+		.av_st_coeff_startofpacket    (scheduler_av_st_coeff_startofpacket),    //               .startofpacket
+		.av_st_coeff_endofpacket      (scheduler_av_st_coeff_endofpacket),      //               .endofpacket
+		.av_st_coeff_data             (scheduler_av_st_coeff_data),             //               .data
+		.av_st_coeff_ready            (scheduler_av_st_coeff_ready),            //               .ready
+		.av_mm_control_address        (control_address),                        //  av_mm_control.address
+		.av_mm_control_byteenable     (control_byteenable),                     //               .byteenable
+		.av_mm_control_write          (control_write),                          //               .write
+		.av_mm_control_writedata      (control_writedata),                      //               .writedata
+		.av_mm_control_read           (control_read),                           //               .read
+		.av_mm_control_readdata       (control_readdata),                       //               .readdata
+		.av_mm_control_readdatavalid  (control_readdatavalid),                  //               .readdatavalid
+		.av_mm_control_waitrequest    (control_waitrequest)                     //               .waitrequest
 	);
 
 	alt_vip_guard_bands_alg_core #(
@@ -488,7 +519,7 @@ module assign2_system_alt_vip_cl_2dfir_0 (
 
 	assign line_buffer_av_st_dout_0_valid = { line_buffer_av_st_dout_valid[0] };
 
-	assign line_buffer_av_st_dout_0_data = { line_buffer_av_st_dout_data[223:0] };
+	assign line_buffer_av_st_dout_0_data = { line_buffer_av_st_dout_data[103:0] };
 
 	assign line_buffer_av_st_dout_0_startofpacket = { line_buffer_av_st_dout_startofpacket[0] };
 

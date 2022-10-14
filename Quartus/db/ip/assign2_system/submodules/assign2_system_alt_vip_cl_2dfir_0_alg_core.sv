@@ -22,7 +22,7 @@ module assign2_system_alt_vip_cl_2dfir_0_alg_core
       input    wire                                av_st_din_valid,
       input    wire                                av_st_din_startofpacket,
       input    wire                                av_st_din_endofpacket,
-      input    wire  [224 - 1 : 0]     av_st_din_data,
+      input    wire  [104 - 1 : 0]     av_st_din_data,
       output   wire                                av_st_din_ready,
 
       output   wire                                av_st_resp_valid,
@@ -37,12 +37,17 @@ module assign2_system_alt_vip_cl_2dfir_0_alg_core
       output   wire  [56 - 1 : 0]    av_st_dout_data,
       input    wire                                av_st_dout_ready,
       
+      input    wire                                av_st_coeff_valid,
+      input    wire                                av_st_coeff_startofpacket,
+      input    wire                                av_st_coeff_endofpacket,
+      input    wire  [36 - 1 : 0]   av_st_coeff_data,
+      output   wire                                av_st_coeff_ready,
       
       input    wire   clock,
       input    wire   reset
    );
    
-   localparam  integer  FIXED_COEFFS  [0 : 80] =  '{-128,  -256,  -128,  0,  0,  0,  128,  255,  128,
+   localparam  integer  FIXED_COEFFS  [0 : 80] =  '{0,  0,  0,  0,  0,  0,  0,  0,  0,
                                                     0,  0, 0, 0, 0, 0, 0, 0, 0,
                                                     0, 0, 0, 0, 0, 0, 0, 0, 0,
                                                     0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -52,11 +57,6 @@ module assign2_system_alt_vip_cl_2dfir_0_alg_core
                                                     0, 0, 0, 0, 0, 0, 0, 0, 0,
                                                     0, 0, 0, 0, 0, 0, 0, 0, 0};
 
-   wire                                av_st_coeff_valid;
-   wire                                av_st_coeff_startofpacket;
-   wire                                av_st_coeff_endofpacket;
-   wire  [1 - 1 : 0]   av_st_coeff_data;
-   wire                                av_st_coeff_ready;
 
    alt_vip_fir_alg_core # (
       .NUMBER_OF_COLOR_PLANES          (3),
@@ -70,14 +70,14 @@ module assign2_system_alt_vip_cl_2dfir_0_alg_core
       .EDGE_ADAPTIVE_SHARPEN           (0),
       .DO_MIRRORING                    (1),
       .ENABLE_WIDE_BLUR_SHARPEN        (1),
-      .RUNTIME_CONTROL                 (0),
+      .RUNTIME_CONTROL                 (1),
       .UPPER_BLUR_LIM                  (15),
       .LOWER_BLUR_LIM                  (0),
-      .H_TAPS                          (8),
-      .V_TAPS                          (8),
+      .H_TAPS                          (3),
+      .V_TAPS                          (3),
       .COEFF_SIGNED                    (1),
-      .COEFF_INTEGER_BITS              (1),
-      .COEFF_FRACTION_BITS             (7),
+      .COEFF_INTEGER_BITS              (3),
+      .COEFF_FRACTION_BITS             (0),
       .V_SYMMETRIC                     (0),
       .H_SYMMETRIC                     (0),
       .DIAG_SYMMETRIC                  (0),

@@ -140,6 +140,14 @@ module assign2_system (
 	wire         mm_interconnect_0_onchip_mem_s1_write;                             // mm_interconnect_0:onchip_mem_s1_write -> onchip_mem:write
 	wire  [15:0] mm_interconnect_0_onchip_mem_s1_writedata;                         // mm_interconnect_0:onchip_mem_s1_writedata -> onchip_mem:writedata
 	wire         mm_interconnect_0_onchip_mem_s1_clken;                             // mm_interconnect_0:onchip_mem_s1_clken -> onchip_mem:clken
+	wire  [31:0] mm_interconnect_0_alt_vip_cl_2dfir_0_control_readdata;             // alt_vip_cl_2dfir_0:control_readdata -> mm_interconnect_0:alt_vip_cl_2dfir_0_control_readdata
+	wire         mm_interconnect_0_alt_vip_cl_2dfir_0_control_waitrequest;          // alt_vip_cl_2dfir_0:control_waitrequest -> mm_interconnect_0:alt_vip_cl_2dfir_0_control_waitrequest
+	wire   [8:0] mm_interconnect_0_alt_vip_cl_2dfir_0_control_address;              // mm_interconnect_0:alt_vip_cl_2dfir_0_control_address -> alt_vip_cl_2dfir_0:control_address
+	wire         mm_interconnect_0_alt_vip_cl_2dfir_0_control_read;                 // mm_interconnect_0:alt_vip_cl_2dfir_0_control_read -> alt_vip_cl_2dfir_0:control_read
+	wire   [3:0] mm_interconnect_0_alt_vip_cl_2dfir_0_control_byteenable;           // mm_interconnect_0:alt_vip_cl_2dfir_0_control_byteenable -> alt_vip_cl_2dfir_0:control_byteenable
+	wire         mm_interconnect_0_alt_vip_cl_2dfir_0_control_readdatavalid;        // alt_vip_cl_2dfir_0:control_readdatavalid -> mm_interconnect_0:alt_vip_cl_2dfir_0_control_readdatavalid
+	wire         mm_interconnect_0_alt_vip_cl_2dfir_0_control_write;                // mm_interconnect_0:alt_vip_cl_2dfir_0_control_write -> alt_vip_cl_2dfir_0:control_write
+	wire  [31:0] mm_interconnect_0_alt_vip_cl_2dfir_0_control_writedata;            // mm_interconnect_0:alt_vip_cl_2dfir_0_control_writedata -> alt_vip_cl_2dfir_0:control_writedata
 	wire         irq_mapper_receiver0_irq;                                          // uart:irq -> irq_mapper:receiver0_irq
 	wire         irq_mapper_receiver1_irq;                                          // jtag_uart:av_irq -> irq_mapper:receiver1_irq
 	wire         irq_mapper_receiver2_irq;                                          // timer_0:irq -> irq_mapper:receiver2_irq
@@ -163,18 +171,26 @@ module assign2_system (
 	wire         video_pll_0_reset_source_reset;                                    // video_pll_0:reset_source_reset -> rst_controller_002:reset_in0
 
 	assign2_system_alt_vip_cl_2dfir_0 alt_vip_cl_2dfir_0 (
-		.main_clock         (sys_sdram_pll_0_sys_clk_clk),           // main_clock.clk
-		.main_reset         (rst_controller_reset_out_reset),        // main_reset.reset
-		.din_data           (alt_vip_cl_tpg_0_dout_data),            //        din.data
-		.din_valid          (alt_vip_cl_tpg_0_dout_valid),           //           .valid
-		.din_startofpacket  (alt_vip_cl_tpg_0_dout_startofpacket),   //           .startofpacket
-		.din_endofpacket    (alt_vip_cl_tpg_0_dout_endofpacket),     //           .endofpacket
-		.din_ready          (alt_vip_cl_tpg_0_dout_ready),           //           .ready
-		.dout_data          (alt_vip_cl_2dfir_0_dout_data),          //       dout.data
-		.dout_valid         (alt_vip_cl_2dfir_0_dout_valid),         //           .valid
-		.dout_startofpacket (alt_vip_cl_2dfir_0_dout_startofpacket), //           .startofpacket
-		.dout_endofpacket   (alt_vip_cl_2dfir_0_dout_endofpacket),   //           .endofpacket
-		.dout_ready         (alt_vip_cl_2dfir_0_dout_ready)          //           .ready
+		.main_clock            (sys_sdram_pll_0_sys_clk_clk),                                // main_clock.clk
+		.main_reset            (rst_controller_reset_out_reset),                             // main_reset.reset
+		.din_data              (alt_vip_cl_tpg_0_dout_data),                                 //        din.data
+		.din_valid             (alt_vip_cl_tpg_0_dout_valid),                                //           .valid
+		.din_startofpacket     (alt_vip_cl_tpg_0_dout_startofpacket),                        //           .startofpacket
+		.din_endofpacket       (alt_vip_cl_tpg_0_dout_endofpacket),                          //           .endofpacket
+		.din_ready             (alt_vip_cl_tpg_0_dout_ready),                                //           .ready
+		.dout_data             (alt_vip_cl_2dfir_0_dout_data),                               //       dout.data
+		.dout_valid            (alt_vip_cl_2dfir_0_dout_valid),                              //           .valid
+		.dout_startofpacket    (alt_vip_cl_2dfir_0_dout_startofpacket),                      //           .startofpacket
+		.dout_endofpacket      (alt_vip_cl_2dfir_0_dout_endofpacket),                        //           .endofpacket
+		.dout_ready            (alt_vip_cl_2dfir_0_dout_ready),                              //           .ready
+		.control_address       (mm_interconnect_0_alt_vip_cl_2dfir_0_control_address),       //    control.address
+		.control_byteenable    (mm_interconnect_0_alt_vip_cl_2dfir_0_control_byteenable),    //           .byteenable
+		.control_write         (mm_interconnect_0_alt_vip_cl_2dfir_0_control_write),         //           .write
+		.control_writedata     (mm_interconnect_0_alt_vip_cl_2dfir_0_control_writedata),     //           .writedata
+		.control_read          (mm_interconnect_0_alt_vip_cl_2dfir_0_control_read),          //           .read
+		.control_readdata      (mm_interconnect_0_alt_vip_cl_2dfir_0_control_readdata),      //           .readdata
+		.control_readdatavalid (mm_interconnect_0_alt_vip_cl_2dfir_0_control_readdatavalid), //           .readdatavalid
+		.control_waitrequest   (mm_interconnect_0_alt_vip_cl_2dfir_0_control_waitrequest)    //           .waitrequest
 	);
 
 	assign2_system_alt_vip_cl_tpg_0 #(
@@ -448,6 +464,14 @@ module assign2_system (
 		.cpu_instruction_master_read                     (cpu_instruction_master_read),                                       //                                       .read
 		.cpu_instruction_master_readdata                 (cpu_instruction_master_readdata),                                   //                                       .readdata
 		.cpu_instruction_master_readdatavalid            (cpu_instruction_master_readdatavalid),                              //                                       .readdatavalid
+		.alt_vip_cl_2dfir_0_control_address              (mm_interconnect_0_alt_vip_cl_2dfir_0_control_address),              //             alt_vip_cl_2dfir_0_control.address
+		.alt_vip_cl_2dfir_0_control_write                (mm_interconnect_0_alt_vip_cl_2dfir_0_control_write),                //                                       .write
+		.alt_vip_cl_2dfir_0_control_read                 (mm_interconnect_0_alt_vip_cl_2dfir_0_control_read),                 //                                       .read
+		.alt_vip_cl_2dfir_0_control_readdata             (mm_interconnect_0_alt_vip_cl_2dfir_0_control_readdata),             //                                       .readdata
+		.alt_vip_cl_2dfir_0_control_writedata            (mm_interconnect_0_alt_vip_cl_2dfir_0_control_writedata),            //                                       .writedata
+		.alt_vip_cl_2dfir_0_control_byteenable           (mm_interconnect_0_alt_vip_cl_2dfir_0_control_byteenable),           //                                       .byteenable
+		.alt_vip_cl_2dfir_0_control_readdatavalid        (mm_interconnect_0_alt_vip_cl_2dfir_0_control_readdatavalid),        //                                       .readdatavalid
+		.alt_vip_cl_2dfir_0_control_waitrequest          (mm_interconnect_0_alt_vip_cl_2dfir_0_control_waitrequest),          //                                       .waitrequest
 		.cpu_debug_mem_slave_address                     (mm_interconnect_0_cpu_debug_mem_slave_address),                     //                    cpu_debug_mem_slave.address
 		.cpu_debug_mem_slave_write                       (mm_interconnect_0_cpu_debug_mem_slave_write),                       //                                       .write
 		.cpu_debug_mem_slave_read                        (mm_interconnect_0_cpu_debug_mem_slave_read),                        //                                       .read
