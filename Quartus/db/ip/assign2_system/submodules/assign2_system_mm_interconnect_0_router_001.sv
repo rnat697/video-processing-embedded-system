@@ -136,8 +136,7 @@ module assign2_system_mm_interconnect_0_router_001
     // -------------------------------------------------------
     localparam PAD0 = log2ceil(64'h1000000 - 64'h800000); 
     localparam PAD1 = log2ceil(64'h1010000 - 64'h1008000); 
-    localparam PAD2 = log2ceil(64'h1010800 - 64'h1010000); 
-    localparam PAD3 = log2ceil(64'h1011800 - 64'h1011000); 
+    localparam PAD2 = log2ceil(64'h1011800 - 64'h1011000); 
     // -------------------------------------------------------
     // Work out which address bits are significant based on the
     // address range of the slaves. If the required width is too
@@ -193,25 +192,19 @@ module assign2_system_mm_interconnect_0_router_001
 
     // ( 0x800000 .. 0x1000000 )
     if ( {address[RG:PAD0],{PAD0{1'b0}}} == 25'h800000   ) begin
-            src_channel = 14'b0010;
+            src_channel = 14'b010;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 8;
     end
 
     // ( 0x1008000 .. 0x1010000 )
     if ( {address[RG:PAD1],{PAD1{1'b0}}} == 25'h1008000   ) begin
-            src_channel = 14'b0100;
+            src_channel = 14'b100;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 7;
     end
 
-    // ( 0x1010000 .. 0x1010800 )
-    if ( {address[RG:PAD2],{PAD2{1'b0}}} == 25'h1010000   ) begin
-            src_channel = 14'b1000;
-            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 0;
-    end
-
     // ( 0x1011000 .. 0x1011800 )
-    if ( {address[RG:PAD3],{PAD3{1'b0}}} == 25'h1011000   ) begin
-            src_channel = 14'b0001;
+    if ( {address[RG:PAD2],{PAD2{1'b0}}} == 25'h1011000   ) begin
+            src_channel = 14'b001;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 1;
     end
 

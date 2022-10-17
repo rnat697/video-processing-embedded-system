@@ -76,6 +76,14 @@ module assign2_system (
 	wire  [31:0] mm_interconnect_0_jtag_uart_avalon_jtag_slave_writedata;           // mm_interconnect_0:jtag_uart_avalon_jtag_slave_writedata -> jtag_uart:av_writedata
 	wire  [31:0] mm_interconnect_0_video_rgb_resampler_0_avalon_rgb_slave_readdata; // video_rgb_resampler_0:slave_readdata -> mm_interconnect_0:video_rgb_resampler_0_avalon_rgb_slave_readdata
 	wire         mm_interconnect_0_video_rgb_resampler_0_avalon_rgb_slave_read;     // mm_interconnect_0:video_rgb_resampler_0_avalon_rgb_slave_read -> video_rgb_resampler_0:slave_read
+	wire  [31:0] mm_interconnect_0_alt_vip_cl_2dfir_0_control_readdata;             // alt_vip_cl_2dfir_0:control_readdata -> mm_interconnect_0:alt_vip_cl_2dfir_0_control_readdata
+	wire         mm_interconnect_0_alt_vip_cl_2dfir_0_control_waitrequest;          // alt_vip_cl_2dfir_0:control_waitrequest -> mm_interconnect_0:alt_vip_cl_2dfir_0_control_waitrequest
+	wire   [8:0] mm_interconnect_0_alt_vip_cl_2dfir_0_control_address;              // mm_interconnect_0:alt_vip_cl_2dfir_0_control_address -> alt_vip_cl_2dfir_0:control_address
+	wire         mm_interconnect_0_alt_vip_cl_2dfir_0_control_read;                 // mm_interconnect_0:alt_vip_cl_2dfir_0_control_read -> alt_vip_cl_2dfir_0:control_read
+	wire   [3:0] mm_interconnect_0_alt_vip_cl_2dfir_0_control_byteenable;           // mm_interconnect_0:alt_vip_cl_2dfir_0_control_byteenable -> alt_vip_cl_2dfir_0:control_byteenable
+	wire         mm_interconnect_0_alt_vip_cl_2dfir_0_control_readdatavalid;        // alt_vip_cl_2dfir_0:control_readdatavalid -> mm_interconnect_0:alt_vip_cl_2dfir_0_control_readdatavalid
+	wire         mm_interconnect_0_alt_vip_cl_2dfir_0_control_write;                // mm_interconnect_0:alt_vip_cl_2dfir_0_control_write -> alt_vip_cl_2dfir_0:control_write
+	wire  [31:0] mm_interconnect_0_alt_vip_cl_2dfir_0_control_writedata;            // mm_interconnect_0:alt_vip_cl_2dfir_0_control_writedata -> alt_vip_cl_2dfir_0:control_writedata
 	wire   [7:0] mm_interconnect_0_lcd_control_slave_readdata;                      // lcd:readdata -> mm_interconnect_0:lcd_control_slave_readdata
 	wire   [1:0] mm_interconnect_0_lcd_control_slave_address;                       // mm_interconnect_0:lcd_control_slave_address -> lcd:address
 	wire         mm_interconnect_0_lcd_control_slave_read;                          // mm_interconnect_0:lcd_control_slave_read -> lcd:read
@@ -140,14 +148,6 @@ module assign2_system (
 	wire         mm_interconnect_0_onchip_mem_s1_write;                             // mm_interconnect_0:onchip_mem_s1_write -> onchip_mem:write
 	wire  [15:0] mm_interconnect_0_onchip_mem_s1_writedata;                         // mm_interconnect_0:onchip_mem_s1_writedata -> onchip_mem:writedata
 	wire         mm_interconnect_0_onchip_mem_s1_clken;                             // mm_interconnect_0:onchip_mem_s1_clken -> onchip_mem:clken
-	wire  [31:0] mm_interconnect_0_alt_vip_cl_2dfir_0_control_readdata;             // alt_vip_cl_2dfir_0:control_readdata -> mm_interconnect_0:alt_vip_cl_2dfir_0_control_readdata
-	wire         mm_interconnect_0_alt_vip_cl_2dfir_0_control_waitrequest;          // alt_vip_cl_2dfir_0:control_waitrequest -> mm_interconnect_0:alt_vip_cl_2dfir_0_control_waitrequest
-	wire   [8:0] mm_interconnect_0_alt_vip_cl_2dfir_0_control_address;              // mm_interconnect_0:alt_vip_cl_2dfir_0_control_address -> alt_vip_cl_2dfir_0:control_address
-	wire         mm_interconnect_0_alt_vip_cl_2dfir_0_control_read;                 // mm_interconnect_0:alt_vip_cl_2dfir_0_control_read -> alt_vip_cl_2dfir_0:control_read
-	wire   [3:0] mm_interconnect_0_alt_vip_cl_2dfir_0_control_byteenable;           // mm_interconnect_0:alt_vip_cl_2dfir_0_control_byteenable -> alt_vip_cl_2dfir_0:control_byteenable
-	wire         mm_interconnect_0_alt_vip_cl_2dfir_0_control_readdatavalid;        // alt_vip_cl_2dfir_0:control_readdatavalid -> mm_interconnect_0:alt_vip_cl_2dfir_0_control_readdatavalid
-	wire         mm_interconnect_0_alt_vip_cl_2dfir_0_control_write;                // mm_interconnect_0:alt_vip_cl_2dfir_0_control_write -> alt_vip_cl_2dfir_0:control_write
-	wire  [31:0] mm_interconnect_0_alt_vip_cl_2dfir_0_control_writedata;            // mm_interconnect_0:alt_vip_cl_2dfir_0_control_writedata -> alt_vip_cl_2dfir_0:control_writedata
 	wire         irq_mapper_receiver0_irq;                                          // uart:irq -> irq_mapper:receiver0_irq
 	wire         irq_mapper_receiver1_irq;                                          // jtag_uart:av_irq -> irq_mapper:receiver1_irq
 	wire         irq_mapper_receiver2_irq;                                          // timer_0:irq -> irq_mapper:receiver2_irq
