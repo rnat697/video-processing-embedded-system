@@ -3609,3 +3609,55 @@ Info: Building ../task3round2_bsp/
 C:/intelFPGA/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../task3round2_bsp/
 [BSP build complete]
 [task3round2 build complete]
+17:31:20 **** Incremental Build of configuration Nios II for project task3round2 ****
+make all 
+Info: Building ../task3round2_bsp/
+C:/intelFPGA/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../task3round2_bsp/
+[BSP build complete]
+Info: Compiling hello_world.c to obj/default/hello_world.o
+nios2-elf-gcc -xc -MP -MMD -c -I../task3round2_bsp//drivers/vip/../../drivers/vip/inc -I../task3round2_bsp//drivers/vip/../../drivers/vip/src -I../task3round2_bsp//HAL/inc -I../task3round2_bsp/ -I../task3round2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/hello_world.o hello_world.c
+hello_world.c: In function 'main':
+hello_world.c:45:28: warning: overflow in implicit constant conversion [-Woverflow]
+   signed char sobelX[9] = {0xFFFF, 0x0,0x1,0xFFFE,0x0,0x2,0xFFFF,0x0,0x1};
+                            ^
+hello_world.c:45:44: warning: overflow in implicit constant conversion [-Woverflow]
+   signed char sobelX[9] = {0xFFFF, 0x0,0x1,0xFFFE,0x0,0x2,0xFFFF,0x0,0x1};
+                                            ^
+hello_world.c:45:59: warning: overflow in implicit constant conversion [-Woverflow]
+   signed char sobelX[9] = {0xFFFF, 0x0,0x1,0xFFFE,0x0,0x2,0xFFFF,0x0,0x1};
+                                                           ^
+hello_world.c:49:28: warning: overflow in implicit constant conversion [-Woverflow]
+   signed char sobelY[9] = {0xFFFF,0xFFFE,0xFFFF,0x0,0x0,0x0,0x1,0x2,0x1};
+                            ^
+hello_world.c:49:35: warning: overflow in implicit constant conversion [-Woverflow]
+   signed char sobelY[9] = {0xFFFF,0xFFFE,0xFFFF,0x0,0x0,0x0,0x1,0x2,0x1};
+                                   ^
+hello_world.c:49:42: warning: overflow in implicit constant conversion [-Woverflow]
+   signed char sobelY[9] = {0xFFFF,0xFFFE,0xFFFF,0x0,0x0,0x0,0x1,0x2,0x1};
+                                          ^
+hello_world.c:62:7: warning: variable 'lcdTrigger' set but not used [-Wunused-but-set-variable]
+   int lcdTrigger = 0;
+       ^
+hello_world.c:56:7: warning: unused variable 'index' [-Wunused-variable]
+   int index;
+       ^
+hello_world.c:55:9: warning: variable 'stringToOutput' set but not used [-Wunused-but-set-variable]
+   char* stringToOutput = "example1";
+         ^
+Info: Linking task3round2.elf
+nios2-elf-g++  -T'../task3round2_bsp//linker.x' -msys-crt0='../task3round2_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../task3round2_bsp/   -Wl,-Map=task3round2.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o task3round2.elf obj/default/hello_world.o -lm -msys-lib=m
+nios2-elf-insert task3round2.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name assign2_system --quartus_project_dir "H:/Documents/GitHub/video-processing-group-10/Quartus" --jdi ../..//output_files/assignment2.jdi --sopcinfo H:/Documents/GitHub/video-processing-group-10/Quartus/software/task3round2_bsp/../../assign2_system.sopcinfo
+Info: (task3round2.elf) 79 KBytes program size (code + initialized data).
+Info:                   8104 KBytes free for stack + heap.
+Info: Creating task3round2.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source task3round2.elf >task3round2.objdump
+[task3round2 build complete]
+17:31:25 **** Incremental Build of configuration Nios II for project task3round2_bsp ****
+make all 
+[BSP build complete]
+17:31:41 **** Incremental Build of configuration Nios II for project task3round2 ****
+make all 
+Info: Building ../task3round2_bsp/
+C:/intelFPGA/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../task3round2_bsp/
+[BSP build complete]
+[task3round2 build complete]
