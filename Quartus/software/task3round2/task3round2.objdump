@@ -1036,7 +1036,7 @@ int main()
   8002a4:	21069404 	addi	r4,r4,6736
   8002a8:	080190c0 	call	80190c <puts>
   unsigned int uiSwitchValue = 0;
-  8002ac:	e03ff215 	stw	zero,-56(fp)
+  8002ac:	e03ff315 	stw	zero,-52(fp)
  // smoothing = [1,1,1,1,1,1,1,1,1]
   unsigned char smoothing[9] = {0x1,0x1,0x1,0x1,0x1,0x1,0x1,0x1,0x1};
   8002b0:	00800044 	movi	r2,1
@@ -1113,7 +1113,7 @@ int main()
   char* stringToOutput = "example1";
   800398:	00802074 	movhi	r2,129
   80039c:	10869904 	addi	r2,r2,6756
-  8003a0:	e0bff315 	stw	r2,-52(fp)
+  8003a0:	e0bff415 	stw	r2,-48(fp)
   int index;
   int previousSwitch = 0;
   8003a4:	e03fed15 	stw	zero,-76(fp)
@@ -1126,23 +1126,23 @@ int main()
   8003b0:	01002074 	movhi	r4,129
   8003b4:	21069d04 	addi	r4,r4,6772
   8003b8:	08007bc0 	call	8007bc <fopen>
-  8003bc:	e0bff415 	stw	r2,-48(fp)
+  8003bc:	e0bff515 	stw	r2,-44(fp)
   int lcdTrigger = 0;
-  8003c0:	e03ff515 	stw	zero,-44(fp)
+  8003c0:	e03fee15 	stw	zero,-72(fp)
   while(1){
 
 	  uiSwitchValue = IORD_ALTERA_AVALON_PIO_DATA(SWITCHES_BASE);
   8003c4:	00804074 	movhi	r2,257
   8003c8:	10861c04 	addi	r2,r2,6256
   8003cc:	10800037 	ldwio	r2,0(r2)
-  8003d0:	e0bff215 	stw	r2,-56(fp)
+  8003d0:	e0bff315 	stw	r2,-52(fp)
 	  IOWR_ALTERA_AVALON_PIO_DATA(LEDS_RED_BASE, uiSwitchValue);
-  8003d4:	e0fff217 	ldw	r3,-56(fp)
+  8003d4:	e0fff317 	ldw	r3,-52(fp)
   8003d8:	00804074 	movhi	r2,257
   8003dc:	10862004 	addi	r2,r2,6272
   8003e0:	10c00035 	stwio	r3,0(r2)
 	  int switchValueInteger = (int)(uiSwitchValue);
-  8003e4:	e0bff217 	ldw	r2,-56(fp)
+  8003e4:	e0bff317 	ldw	r2,-52(fp)
   8003e8:	e0bff615 	stw	r2,-40(fp)
 
 
@@ -1158,20 +1158,20 @@ int main()
   800408:	e0bfed15 	stw	r2,-76(fp)
 		  lcdTrigger=1;
   80040c:	00800044 	movi	r2,1
-  800410:	e0bff515 	stw	r2,-44(fp)
+  800410:	e0bfee15 	stw	r2,-72(fp)
 		  for(int i = 1; i <= 9; i++) {
   800414:	00800044 	movi	r2,1
-  800418:	e0bfee15 	stw	r2,-72(fp)
+  800418:	e0bfef15 	stw	r2,-68(fp)
   80041c:	00001106 	br	800464 <main+0x1d4>
 		  				  IOWR(ALT_VIP_CL_2DFIR_0_BASE, 6+i, smoothing[i-1]);
-  800420:	e0bfee17 	ldw	r2,-72(fp)
+  800420:	e0bfef17 	ldw	r2,-68(fp)
   800424:	10800184 	addi	r2,r2,6
   800428:	1085883a 	add	r2,r2,r2
   80042c:	1085883a 	add	r2,r2,r2
   800430:	1007883a 	mov	r3,r2
   800434:	00804074 	movhi	r2,257
   800438:	1885883a 	add	r2,r3,r2
-  80043c:	e0ffee17 	ldw	r3,-72(fp)
+  80043c:	e0ffef17 	ldw	r3,-68(fp)
   800440:	18ffffc4 	addi	r3,r3,-1
   800444:	e13ff704 	addi	r4,fp,-36
   800448:	20c7883a 	add	r3,r4,r3
@@ -1184,10 +1184,10 @@ int main()
 		  previousSwitch =1;
 		  lcdTrigger=1;
 		  for(int i = 1; i <= 9; i++) {
-  800458:	e0bfee17 	ldw	r2,-72(fp)
+  800458:	e0bfef17 	ldw	r2,-68(fp)
   80045c:	10800044 	addi	r2,r2,1
-  800460:	e0bfee15 	stw	r2,-72(fp)
-  800464:	e0bfee17 	ldw	r2,-72(fp)
+  800460:	e0bfef15 	stw	r2,-68(fp)
+  800464:	e0bfef17 	ldw	r2,-68(fp)
   800468:	10800290 	cmplti	r2,r2,10
   80046c:	103fec1e 	bne	r2,zero,800420 <__alt_mem_onchip_mem+0xff7f8420>
 		  				  IOWR(ALT_VIP_CL_2DFIR_0_BASE, 6+i, smoothing[i-1]);
@@ -1200,7 +1200,7 @@ int main()
 		  			stringToOutput = "Smoothing mode1";
   800480:	00802074 	movhi	r2,129
   800484:	1086a004 	addi	r2,r2,6784
-  800488:	e0bff315 	stw	r2,-52(fp)
+  800488:	e0bff415 	stw	r2,-48(fp)
   80048c:	00007b06 	br	80067c <main+0x3ec>
 
 	  }
@@ -1216,20 +1216,20 @@ int main()
   8004ac:	e0bfed15 	stw	r2,-76(fp)
 		  lcdTrigger=1;
   8004b0:	00800044 	movi	r2,1
-  8004b4:	e0bff515 	stw	r2,-44(fp)
+  8004b4:	e0bfee15 	stw	r2,-72(fp)
 		  for(int i = 1; i <= 9; i++) {
   8004b8:	00800044 	movi	r2,1
-  8004bc:	e0bfef15 	stw	r2,-68(fp)
+  8004bc:	e0bff015 	stw	r2,-64(fp)
   8004c0:	00001306 	br	800510 <main+0x280>
 		  				  IOWR(ALT_VIP_CL_2DFIR_0_BASE, 6+i, sobelX[i-1]);
-  8004c4:	e0bfef17 	ldw	r2,-68(fp)
+  8004c4:	e0bff017 	ldw	r2,-64(fp)
   8004c8:	10800184 	addi	r2,r2,6
   8004cc:	1085883a 	add	r2,r2,r2
   8004d0:	1085883a 	add	r2,r2,r2
   8004d4:	1007883a 	mov	r3,r2
   8004d8:	00804074 	movhi	r2,257
   8004dc:	1885883a 	add	r2,r3,r2
-  8004e0:	e0ffef17 	ldw	r3,-68(fp)
+  8004e0:	e0fff017 	ldw	r3,-64(fp)
   8004e4:	18ffffc4 	addi	r3,r3,-1
   8004e8:	e13ff944 	addi	r4,fp,-27
   8004ec:	20c7883a 	add	r3,r4,r3
@@ -1244,10 +1244,10 @@ int main()
 		  previousSwitch =2;
 		  lcdTrigger=1;
 		  for(int i = 1; i <= 9; i++) {
-  800504:	e0bfef17 	ldw	r2,-68(fp)
+  800504:	e0bff017 	ldw	r2,-64(fp)
   800508:	10800044 	addi	r2,r2,1
-  80050c:	e0bfef15 	stw	r2,-68(fp)
-  800510:	e0bfef17 	ldw	r2,-68(fp)
+  80050c:	e0bff015 	stw	r2,-64(fp)
+  800510:	e0bff017 	ldw	r2,-64(fp)
   800514:	10800290 	cmplti	r2,r2,10
   800518:	103fea1e 	bne	r2,zero,8004c4 <__alt_mem_onchip_mem+0xff7f84c4>
 		  				  IOWR(ALT_VIP_CL_2DFIR_0_BASE, 6+i, sobelX[i-1]);
@@ -1260,7 +1260,7 @@ int main()
 		  			stringToOutput = "SobelX mode2";
   80052c:	00802074 	movhi	r2,129
   800530:	1086a404 	addi	r2,r2,6800
-  800534:	e0bff315 	stw	r2,-52(fp)
+  800534:	e0bff415 	stw	r2,-48(fp)
   800538:	00005006 	br	80067c <main+0x3ec>
 	  }
 
@@ -1276,20 +1276,20 @@ int main()
   800558:	e0bfed15 	stw	r2,-76(fp)
 		  lcdTrigger=1;
   80055c:	00800044 	movi	r2,1
-  800560:	e0bff515 	stw	r2,-44(fp)
+  800560:	e0bfee15 	stw	r2,-72(fp)
 		  	  for(int i = 1; i <= 9; i++) {
   800564:	00800044 	movi	r2,1
-  800568:	e0bff015 	stw	r2,-64(fp)
+  800568:	e0bff115 	stw	r2,-60(fp)
   80056c:	00001306 	br	8005bc <main+0x32c>
 		  		 IOWR(ALT_VIP_CL_2DFIR_0_BASE, 6+i, sobelY[i-1]);
-  800570:	e0bff017 	ldw	r2,-64(fp)
+  800570:	e0bff117 	ldw	r2,-60(fp)
   800574:	10800184 	addi	r2,r2,6
   800578:	1085883a 	add	r2,r2,r2
   80057c:	1085883a 	add	r2,r2,r2
   800580:	1007883a 	mov	r3,r2
   800584:	00804074 	movhi	r2,257
   800588:	1885883a 	add	r2,r3,r2
-  80058c:	e0fff017 	ldw	r3,-64(fp)
+  80058c:	e0fff117 	ldw	r3,-60(fp)
   800590:	18ffffc4 	addi	r3,r3,-1
   800594:	e13ffb84 	addi	r4,fp,-18
   800598:	20c7883a 	add	r3,r4,r3
@@ -1304,10 +1304,10 @@ int main()
 		  previousSwitch =4;
 		  lcdTrigger=1;
 		  	  for(int i = 1; i <= 9; i++) {
-  8005b0:	e0bff017 	ldw	r2,-64(fp)
+  8005b0:	e0bff117 	ldw	r2,-60(fp)
   8005b4:	10800044 	addi	r2,r2,1
-  8005b8:	e0bff015 	stw	r2,-64(fp)
-  8005bc:	e0bff017 	ldw	r2,-64(fp)
+  8005b8:	e0bff115 	stw	r2,-60(fp)
+  8005bc:	e0bff117 	ldw	r2,-60(fp)
   8005c0:	10800290 	cmplti	r2,r2,10
   8005c4:	103fea1e 	bne	r2,zero,800570 <__alt_mem_onchip_mem+0xff7f8570>
 		  		 IOWR(ALT_VIP_CL_2DFIR_0_BASE, 6+i, sobelY[i-1]);
@@ -1320,7 +1320,7 @@ int main()
 		  		stringToOutput = "SobelY mode4";
   8005d8:	00802074 	movhi	r2,129
   8005dc:	1086a804 	addi	r2,r2,6816
-  8005e0:	e0bff315 	stw	r2,-52(fp)
+  8005e0:	e0bff415 	stw	r2,-48(fp)
   8005e4:	00002506 	br	80067c <main+0x3ec>
 
 	  }
@@ -1335,20 +1335,20 @@ int main()
   8005f8:	e0bfed15 	stw	r2,-76(fp)
 			  lcdTrigger=1;
   8005fc:	00800044 	movi	r2,1
-  800600:	e0bff515 	stw	r2,-44(fp)
+  800600:	e0bfee15 	stw	r2,-72(fp)
 			  for(int i = 1; i <= 9; i++) {
   800604:	00800044 	movi	r2,1
-  800608:	e0bff115 	stw	r2,-60(fp)
+  800608:	e0bff215 	stw	r2,-56(fp)
   80060c:	00001106 	br	800654 <main+0x3c4>
 				  IOWR(ALT_VIP_CL_2DFIR_0_BASE, 6+i, identity[i-1]);
-  800610:	e0bff117 	ldw	r2,-60(fp)
+  800610:	e0bff217 	ldw	r2,-56(fp)
   800614:	10800184 	addi	r2,r2,6
   800618:	1085883a 	add	r2,r2,r2
   80061c:	1085883a 	add	r2,r2,r2
   800620:	1007883a 	mov	r3,r2
   800624:	00804074 	movhi	r2,257
   800628:	1885883a 	add	r2,r3,r2
-  80062c:	e0fff117 	ldw	r3,-60(fp)
+  80062c:	e0fff217 	ldw	r3,-56(fp)
   800630:	18ffffc4 	addi	r3,r3,-1
   800634:	e13ffdc4 	addi	r4,fp,-9
   800638:	20c7883a 	add	r3,r4,r3
@@ -1361,10 +1361,10 @@ int main()
 			  previousSwitch = switchValueInteger;
 			  lcdTrigger=1;
 			  for(int i = 1; i <= 9; i++) {
-  800648:	e0bff117 	ldw	r2,-60(fp)
+  800648:	e0bff217 	ldw	r2,-56(fp)
   80064c:	10800044 	addi	r2,r2,1
-  800650:	e0bff115 	stw	r2,-60(fp)
-  800654:	e0bff117 	ldw	r2,-60(fp)
+  800650:	e0bff215 	stw	r2,-56(fp)
+  800654:	e0bff217 	ldw	r2,-56(fp)
   800658:	10800290 	cmplti	r2,r2,10
   80065c:	103fec1e 	bne	r2,zero,800610 <__alt_mem_onchip_mem+0xff7f8610>
 				  IOWR(ALT_VIP_CL_2DFIR_0_BASE, 6+i, identity[i-1]);
@@ -1377,20 +1377,20 @@ int main()
 			  stringToOutput = "Identity default";
   800670:	00802074 	movhi	r2,129
   800674:	1086ac04 	addi	r2,r2,6832
-  800678:	e0bff315 	stw	r2,-52(fp)
+  800678:	e0bff415 	stw	r2,-48(fp)
 
 		  }
 	  }
 
 
 			if (lcd != NULL) // check if the UART is open successfully
-  80067c:	e0bff417 	ldw	r2,-48(fp)
+  80067c:	e0bff517 	ldw	r2,-44(fp)
   800680:	10000f26 	beq	r2,zero,8006c0 <main+0x430>
 		{
-				if (previousSwitch != switchValueInteger){
-  800684:	e0ffed17 	ldw	r3,-76(fp)
-  800688:	e0bff617 	ldw	r2,-40(fp)
-  80068c:	18800c26 	beq	r3,r2,8006c0 <main+0x430>
+				if (lcdTrigger==1){
+  800684:	e0bfee17 	ldw	r2,-72(fp)
+  800688:	10800058 	cmpnei	r2,r2,1
+  80068c:	10000c1e 	bne	r2,zero,8006c0 <main+0x430>
 					#define ESC 27
 					#define CLEAR_LCD_STRING "[2J"
 
@@ -1400,13 +1400,13 @@ int main()
   800698:	018006c4 	movi	r6,27
   80069c:	01402074 	movhi	r5,129
   8006a0:	2946b204 	addi	r5,r5,6856
-  8006a4:	e13ff417 	ldw	r4,-48(fp)
+  8006a4:	e13ff517 	ldw	r4,-44(fp)
   8006a8:	08007fc0 	call	8007fc <fprintf>
 					fprintf(lcd, "Switch VALUE: %d\n", switchValueInteger);
   8006ac:	e1bff617 	ldw	r6,-40(fp)
   8006b0:	01402074 	movhi	r5,129
   8006b4:	2946b404 	addi	r5,r5,6864
-  8006b8:	e13ff417 	ldw	r4,-48(fp)
+  8006b8:	e13ff517 	ldw	r4,-44(fp)
   8006bc:	08007fc0 	call	8007fc <fprintf>
 
 				}
@@ -1414,7 +1414,7 @@ int main()
 
 		//reset lcd trigger to 0
 			lcdTrigger=0;
-  8006c0:	e03ff515 	stw	zero,-44(fp)
+  8006c0:	e03fee15 	stw	zero,-72(fp)
   }
   8006c4:	003f3f06 	br	8003c4 <__alt_mem_onchip_mem+0xff7f83c4>
 
