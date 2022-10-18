@@ -1,71 +1,71 @@
 # # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
 # 
-preplace inst assign2_system.uart -pg 1 -lvl 7 -y 980
-preplace inst assign2_system.switches -pg 1 -lvl 7 -y 1300
+preplace inst assign2_system.uart -pg 1 -lvl 7 -y 940
+preplace inst assign2_system.switches -pg 1 -lvl 7 -y 1260
 preplace inst assign2_system.alt_vip_cl_tpg_0.core_0 -pg 1
 preplace inst assign2_system.alt_vip_cl_2dfir_0.out_gb -pg 1
 preplace inst assign2_system.alt_vip_cl_2dfir_0.video_out -pg 1
-preplace inst assign2_system.alt_vip_cl_2dfir_0 -pg 1 -lvl 4 -y 310
-preplace inst assign2_system.sdram -pg 1 -lvl 7 -y 1200
+preplace inst assign2_system.alt_vip_cl_2dfir_0 -pg 1 -lvl 4 -y 260
+preplace inst assign2_system.sdram -pg 1 -lvl 7 -y 1160
 preplace inst assign2_system.alt_vip_cl_tpg_0.av_st_reset_bridge -pg 1
 preplace inst assign2_system.alt_vip_cl_2dfir_0.av_st_clk_bridge -pg 1
-preplace inst assign2_system.video_dual_clock_buffer_0 -pg 1 -lvl 6 -y 40
-preplace inst assign2_system.cpu -pg 1 -lvl 3 -y 460
+preplace inst assign2_system.video_dual_clock_buffer_0 -pg 1 -lvl 6 -y 90
+preplace inst assign2_system.cpu -pg 1 -lvl 3 -y 420
 preplace inst assign2_system.alt_vip_cl_tpg_0.video_out -pg 1
-preplace inst assign2_system.video_rgb_resampler_0 -pg 1 -lvl 5 -y 330
+preplace inst assign2_system.video_rgb_resampler_0 -pg 1 -lvl 5 -y 290
 preplace inst assign2_system.cpu.cpu -pg 1
-preplace inst assign2_system.alt_vip_cl_tpg_0 -pg 1 -lvl 3 -y 310
-preplace inst assign2_system.leds_red -pg 1 -lvl 7 -y 1100
+preplace inst assign2_system.alt_vip_cl_tpg_0 -pg 1 -lvl 3 -y 260
+preplace inst assign2_system.leds_red -pg 1 -lvl 7 -y 1060
 preplace inst assign2_system.alt_vip_cl_2dfir_0.output_mux -pg 1
 preplace inst assign2_system -pg 1 -lvl 1 -y 40 -regy -20
 preplace inst assign2_system.sys_sdram_pll_0.reset_from_locked -pg 1
-preplace inst assign2_system.clk_0 -pg 1 -lvl 1 -y 170
+preplace inst assign2_system.clk_0 -pg 1 -lvl 1 -y 130
 preplace inst assign2_system.alt_vip_cl_tpg_0.av_st_clk_bridge -pg 1
-preplace inst assign2_system.lcd -pg 1 -lvl 7 -y 1400
+preplace inst assign2_system.lcd -pg 1 -lvl 7 -y 1360
 preplace inst assign2_system.cpu.reset_bridge -pg 1
 preplace inst assign2_system.cpu.clock_bridge -pg 1
 preplace inst assign2_system.alt_vip_cl_2dfir_0.user_bps_conv -pg 1
 preplace inst assign2_system.alt_vip_cl_2dfir_0.av_st_reset_bridge -pg 1
 preplace inst assign2_system.video_pll_0.video_pll -pg 1
-preplace inst assign2_system.video_pll_0 -pg 1 -lvl 5 -y 110
-preplace inst assign2_system.leds_green -pg 1 -lvl 7 -y 880
+preplace inst assign2_system.video_pll_0 -pg 1 -lvl 5 -y 120
+preplace inst assign2_system.leds_green -pg 1 -lvl 7 -y 840
 preplace inst assign2_system.alt_vip_cl_tpg_0.scheduler -pg 1
 preplace inst assign2_system.alt_vip_cl_2dfir_0.alg_core -pg 1
-preplace inst assign2_system.onchip_mem -pg 1 -lvl 7 -y 480
+preplace inst assign2_system.onchip_mem -pg 1 -lvl 7 -y 440
 preplace inst assign2_system.alt_vip_cl_2dfir_0.scheduler -pg 1
-preplace inst assign2_system.video_vga_controller_0 -pg 1 -lvl 7 -y 80
-preplace inst assign2_system.sys_sdram_pll_0 -pg 1 -lvl 2 -y 200
-preplace inst assign2_system.timer_0 -pg 1 -lvl 7 -y 560
-preplace inst assign2_system.keys -pg 1 -lvl 7 -y 760
-preplace inst assign2_system.jtag_uart -pg 1 -lvl 7 -y 380
+preplace inst assign2_system.video_vga_controller_0 -pg 1 -lvl 7 -y 130
+preplace inst assign2_system.sys_sdram_pll_0 -pg 1 -lvl 2 -y 190
+preplace inst assign2_system.timer_0 -pg 1 -lvl 7 -y 520
+preplace inst assign2_system.keys -pg 1 -lvl 7 -y 720
+preplace inst assign2_system.jtag_uart -pg 1 -lvl 7 -y 340
 preplace inst assign2_system.alt_vip_cl_2dfir_0.input_demux -pg 1
 preplace inst assign2_system.alt_vip_cl_2dfir_0.video_in_resp -pg 1
 preplace inst assign2_system.video_pll_0.reset_from_locked -pg 1
-preplace inst assign2_system.timer_1 -pg 1 -lvl 7 -y 660
+preplace inst assign2_system.timer_1 -pg 1 -lvl 7 -y 620
 preplace inst assign2_system.alt_vip_cl_2dfir_0.video_in_cmd -pg 1
 preplace inst assign2_system.sys_sdram_pll_0.sys_pll -pg 1
 preplace inst assign2_system.alt_vip_cl_2dfir_0.line_buffer -pg 1
-preplace netloc EXPORT<net_container>assign2_system</net_container>(SLAVE)sdram.wire,(SLAVE)assign2_system.sdram_wire) 1 0 7 NJ 1270 NJ 1270 NJ 1270 NJ 1270 NJ 1270 NJ 1270 NJ
-preplace netloc EXPORT<net_container>assign2_system</net_container>(SLAVE)switches.external_connection,(SLAVE)assign2_system.switches_external_connection) 1 0 7 NJ 1330 NJ 1330 NJ 1330 NJ 1330 NJ 1330 NJ 1330 NJ
-preplace netloc FAN_OUT<net_container>assign2_system</net_container>(MASTER)clk_0.clk,(SLAVE)video_pll_0.ref_clk,(SLAVE)sys_sdram_pll_0.ref_clk) 1 1 4 430 120 NJ 120 NJ 120 NJ
-preplace netloc FAN_OUT<net_container>assign2_system</net_container>(MASTER)cpu.irq,(SLAVE)jtag_uart.irq,(SLAVE)keys.irq,(SLAVE)uart.irq,(SLAVE)timer_0.irq,(SLAVE)timer_1.irq) 1 3 4 N 550 NJ 550 NJ 550 2470
-preplace netloc POINT_TO_POINT<net_container>assign2_system</net_container>(MASTER)alt_vip_cl_2dfir_0.dout,(SLAVE)video_rgb_resampler_0.avalon_rgb_sink) 1 4 1 N
-preplace netloc FAN_OUT<net_container>assign2_system</net_container>(SLAVE)timer_0.clk,(SLAVE)sdram.clk,(SLAVE)alt_vip_cl_2dfir_0.main_clock,(SLAVE)video_rgb_resampler_0.clk,(SLAVE)alt_vip_cl_tpg_0.main_clock,(SLAVE)uart.clk,(SLAVE)leds_red.clk,(SLAVE)jtag_uart.clk,(SLAVE)onchip_mem.clk1,(SLAVE)lcd.clk,(SLAVE)cpu.clk,(SLAVE)video_dual_clock_buffer_0.clock_stream_in,(SLAVE)switches.clk,(MASTER)sys_sdram_pll_0.sys_clk,(SLAVE)timer_1.clk,(SLAVE)leds_green.clk,(SLAVE)keys.clk) 1 2 5 730 250 1230 270 1480 270 2040 170 2410
-preplace netloc EXPORT<net_container>assign2_system</net_container>(SLAVE)keys.external_connection,(SLAVE)assign2_system.keys_external_connection) 1 0 7 NJ 790 NJ 790 NJ 790 NJ 790 NJ 790 NJ 790 NJ
-preplace netloc FAN_OUT<net_container>assign2_system</net_container>(MASTER)video_pll_0.vga_clk,(SLAVE)video_dual_clock_buffer_0.clock_stream_out,(SLAVE)video_vga_controller_0.clk) 1 5 2 1980 190 NJ
-preplace netloc EXPORT<net_container>assign2_system</net_container>(SLAVE)lcd.external,(SLAVE)assign2_system.lcd_external) 1 0 7 NJ 1450 NJ 1450 NJ 1450 NJ 1450 NJ 1450 NJ 1450 NJ
-preplace netloc EXPORT<net_container>assign2_system</net_container>(SLAVE)assign2_system.leds_green_external_connection,(SLAVE)leds_green.external_connection) 1 0 7 NJ 910 NJ 910 NJ 910 NJ 910 NJ 910 NJ 910 NJ
-preplace netloc EXPORT<net_container>assign2_system</net_container>(SLAVE)assign2_system.leds_red_external_connection,(SLAVE)leds_red.external_connection) 1 0 7 NJ 1130 NJ 1130 NJ 1130 NJ 1130 NJ 1130 NJ 1130 NJ
+preplace netloc EXPORT<net_container>assign2_system</net_container>(SLAVE)sdram.wire,(SLAVE)assign2_system.sdram_wire) 1 0 7 NJ 1230 NJ 1230 NJ 1230 NJ 1230 NJ 1230 NJ 1230 NJ
+preplace netloc FAN_OUT<net_container>assign2_system</net_container>(MASTER)video_pll_0.reset_source,(SLAVE)video_vga_controller_0.reset,(SLAVE)video_dual_clock_buffer_0.reset_stream_out) 1 5 2 1980 60 2380
+preplace netloc EXPORT<net_container>assign2_system</net_container>(SLAVE)assign2_system.reset,(SLAVE)clk_0.clk_in_reset) 1 0 1 NJ
+preplace netloc FAN_OUT<net_container>assign2_system</net_container>(SLAVE)video_pll_0.ref_clk,(MASTER)clk_0.clk,(SLAVE)sys_sdram_pll_0.ref_clk) 1 1 4 430 130 NJ 130 NJ 130 N
+preplace netloc POINT_TO_POINT<net_container>assign2_system</net_container>(SLAVE)video_rgb_resampler_0.avalon_rgb_sink,(MASTER)alt_vip_cl_2dfir_0.dout) 1 4 1 1450
+preplace netloc INTERCONNECT<net_container>assign2_system</net_container>(SLAVE)jtag_uart.avalon_jtag_slave,(SLAVE)leds_green.s1,(SLAVE)leds_red.s1,(SLAVE)switches.s1,(MASTER)cpu.data_master,(SLAVE)uart.s1,(SLAVE)keys.s1,(SLAVE)onchip_mem.s1,(SLAVE)sdram.s1,(SLAVE)video_rgb_resampler_0.avalon_rgb_slave,(SLAVE)lcd.control_slave,(MASTER)cpu.instruction_master,(SLAVE)cpu.debug_mem_slave,(SLAVE)timer_0.s1,(SLAVE)timer_1.s1) 1 2 5 770 380 1210 360 1450 440 NJ 440 2380
+preplace netloc FAN_OUT<net_container>assign2_system</net_container>(MASTER)video_pll_0.vga_clk,(SLAVE)video_vga_controller_0.clk,(SLAVE)video_dual_clock_buffer_0.clock_stream_out) 1 5 2 2000 80 2420
+preplace netloc EXPORT<net_container>assign2_system</net_container>(SLAVE)assign2_system.switches_external_connection,(SLAVE)switches.external_connection) 1 0 7 NJ 1290 NJ 1290 NJ 1290 NJ 1290 NJ 1290 NJ 1290 NJ
+preplace netloc EXPORT<net_container>assign2_system</net_container>(SLAVE)video_vga_controller_0.external_interface,(SLAVE)assign2_system.video_vga_controller_0_external_interface) 1 0 7 NJ 40 NJ 40 NJ 40 NJ 40 NJ 40 NJ 40 NJ
+preplace netloc FAN_OUT<net_container>assign2_system</net_container>(SLAVE)cpu.clk,(SLAVE)leds_green.clk,(SLAVE)onchip_mem.clk1,(SLAVE)uart.clk,(SLAVE)lcd.clk,(SLAVE)switches.clk,(SLAVE)alt_vip_cl_2dfir_0.main_clock,(SLAVE)leds_red.clk,(SLAVE)timer_0.clk,(SLAVE)video_dual_clock_buffer_0.clock_stream_in,(MASTER)sys_sdram_pll_0.sys_clk,(SLAVE)sdram.clk,(SLAVE)keys.clk,(SLAVE)timer_1.clk,(SLAVE)jtag_uart.clk,(SLAVE)video_rgb_resampler_0.clk,(SLAVE)alt_vip_cl_tpg_0.main_clock) 1 2 5 730 340 1230 380 1490 400 2040 460 2400
+preplace netloc EXPORT<net_container>assign2_system</net_container>(SLAVE)assign2_system.keys_external_connection,(SLAVE)keys.external_connection) 1 0 7 NJ 750 NJ 750 NJ 750 NJ 750 NJ 750 NJ 750 NJ
+preplace netloc EXPORT<net_container>assign2_system</net_container>(SLAVE)assign2_system.leds_green_external_connection,(SLAVE)leds_green.external_connection) 1 0 7 NJ 870 NJ 870 NJ 870 NJ 870 NJ 870 NJ 870 NJ
 preplace netloc EXPORT<net_container>assign2_system</net_container>(SLAVE)clk_0.clk_in,(SLAVE)assign2_system.clk) 1 0 1 NJ
-preplace netloc FAN_OUT<net_container>assign2_system</net_container>(SLAVE)video_dual_clock_buffer_0.reset_stream_out,(SLAVE)video_vga_controller_0.reset,(MASTER)video_pll_0.reset_source) 1 5 2 2000 210 NJ
-preplace netloc EXPORT<net_container>assign2_system</net_container>(SLAVE)assign2_system.video_vga_controller_0_external_interface,(SLAVE)video_vga_controller_0.external_interface) 1 0 7 NJ 40 NJ 40 NJ 40 NJ 40 NJ 40 NJ 30 NJ
-preplace netloc EXPORT<net_container>assign2_system</net_container>(SLAVE)uart.external_connection,(SLAVE)assign2_system.uart_external_connection) 1 0 7 NJ 1010 NJ 1010 NJ 1010 NJ 1010 NJ 1010 NJ 1010 NJ
-preplace netloc EXPORT<net_container>assign2_system</net_container>(MASTER)sys_sdram_pll_0.sdram_clk,(MASTER)assign2_system.sdram_pll_sdram_clk) 1 2 6 NJ 230 NJ 230 NJ 230 NJ 230 NJ 230 NJ
+preplace netloc FAN_OUT<net_container>assign2_system</net_container>(SLAVE)timer_0.irq,(SLAVE)timer_1.irq,(SLAVE)keys.irq,(SLAVE)jtag_uart.irq,(MASTER)cpu.irq,(SLAVE)uart.irq) 1 3 4 N 510 NJ 510 NJ 510 2440
+preplace netloc FAN_OUT<net_container>assign2_system</net_container>(SLAVE)leds_green.reset,(SLAVE)sys_sdram_pll_0.ref_reset,(SLAVE)switches.reset,(SLAVE)timer_0.reset,(SLAVE)sdram.reset,(SLAVE)video_pll_0.ref_reset,(SLAVE)video_dual_clock_buffer_0.reset_stream_in,(MASTER)clk_0.clk_reset,(SLAVE)cpu.reset,(SLAVE)lcd.reset,(SLAVE)video_rgb_resampler_0.reset,(SLAVE)keys.reset,(SLAVE)onchip_mem.reset1,(SLAVE)uart.reset,(SLAVE)alt_vip_cl_2dfir_0.main_reset,(SLAVE)jtag_uart.reset,(SLAVE)leds_red.reset,(SLAVE)alt_vip_cl_tpg_0.main_reset,(SLAVE)timer_1.reset) 1 1 6 410 290 750 360 1190 400 1470 420 2060 480 2420
+preplace netloc EXPORT<net_container>assign2_system</net_container>(SLAVE)assign2_system.lcd_external,(SLAVE)lcd.external) 1 0 7 NJ 1410 NJ 1410 NJ 1410 NJ 1410 NJ 1410 NJ 1410 NJ
+preplace netloc EXPORT<net_container>assign2_system</net_container>(SLAVE)uart.external_connection,(SLAVE)assign2_system.uart_external_connection) 1 0 7 NJ 970 NJ 970 NJ 970 NJ 970 NJ 970 NJ 970 NJ
+preplace netloc EXPORT<net_container>assign2_system</net_container>(SLAVE)leds_red.external_connection,(SLAVE)assign2_system.leds_red_external_connection) 1 0 7 NJ 1090 NJ 1090 NJ 1090 NJ 1090 NJ 1090 NJ 1090 NJ
+preplace netloc EXPORT<net_container>assign2_system</net_container>(MASTER)sys_sdram_pll_0.sdram_clk,(MASTER)assign2_system.sdram_pll_sdram_clk) 1 2 6 NJ 180 NJ 180 NJ 240 NJ 240 NJ 240 NJ
 preplace netloc POINT_TO_POINT<net_container>assign2_system</net_container>(MASTER)video_dual_clock_buffer_0.avalon_dc_buffer_source,(SLAVE)video_vga_controller_0.avalon_vga_sink) 1 6 1 N
-preplace netloc EXPORT<net_container>assign2_system</net_container>(SLAVE)clk_0.clk_in_reset,(SLAVE)assign2_system.reset) 1 0 1 NJ
-preplace netloc POINT_TO_POINT<net_container>assign2_system</net_container>(SLAVE)alt_vip_cl_2dfir_0.din,(MASTER)alt_vip_cl_tpg_0.dout) 1 3 1 1190
-preplace netloc INTERCONNECT<net_container>assign2_system</net_container>(SLAVE)timer_0.s1,(SLAVE)onchip_mem.s1,(SLAVE)timer_1.s1,(SLAVE)lcd.control_slave,(SLAVE)switches.s1,(SLAVE)cpu.debug_mem_slave,(SLAVE)jtag_uart.avalon_jtag_slave,(SLAVE)alt_vip_cl_2dfir_0.control,(SLAVE)uart.s1,(SLAVE)sdram.s1,(MASTER)cpu.instruction_master,(SLAVE)keys.s1,(SLAVE)leds_red.s1,(SLAVE)leds_green.s1,(MASTER)cpu.data_master,(SLAVE)video_rgb_resampler_0.avalon_rgb_slave) 1 2 5 770 600 1250 250 1460 440 NJ 440 2430
+preplace netloc POINT_TO_POINT<net_container>assign2_system</net_container>(SLAVE)alt_vip_cl_2dfir_0.din,(MASTER)alt_vip_cl_tpg_0.dout) 1 3 1 N
 preplace netloc POINT_TO_POINT<net_container>assign2_system</net_container>(SLAVE)video_dual_clock_buffer_0.avalon_dc_buffer_sink,(MASTER)video_rgb_resampler_0.avalon_rgb_source) 1 5 1 2020
-preplace netloc FAN_OUT<net_container>assign2_system</net_container>(SLAVE)uart.reset,(SLAVE)video_rgb_resampler_0.reset,(SLAVE)leds_red.reset,(SLAVE)onchip_mem.reset1,(SLAVE)jtag_uart.reset,(SLAVE)video_dual_clock_buffer_0.reset_stream_in,(SLAVE)lcd.reset,(SLAVE)switches.reset,(SLAVE)video_pll_0.ref_reset,(SLAVE)timer_0.reset,(MASTER)clk_0.clk_reset,(SLAVE)sys_sdram_pll_0.ref_reset,(SLAVE)alt_vip_cl_tpg_0.main_reset,(SLAVE)leds_green.reset,(SLAVE)keys.reset,(SLAVE)timer_1.reset,(SLAVE)sdram.reset,(SLAVE)alt_vip_cl_2dfir_0.main_reset,(SLAVE)cpu.reset) 1 1 6 410 300 750 270 1210 210 1500 190 2060 460 2450
-levelinfo -pg 1 0 200 2810
-levelinfo -hier assign2_system 210 240 570 950 1340 1730 2110 2500 2660
+levelinfo -pg 1 0 200 2780
+levelinfo -hier assign2_system 210 240 570 950 1330 1730 2100 2470 2630

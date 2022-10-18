@@ -5,11 +5,11 @@
  version="1.0"
  fabric="QSYS">
  <!-- Format version 18.1 625 (Future versions may contain additional information.) -->
- <!-- 2022.10.17.16:07:55 -->
+ <!-- 2022.10.18.15:45:58 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1665976075</value>
+  <value>1666061157</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -3740,7 +3740,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="dataSlaveMapParam">
    <type>java.lang.String</type>
-   <value><![CDATA[<address-map><slave name='sdram.s1' start='0x800000' end='0x1000000' type='altera_avalon_new_sdram_controller.s1' /><slave name='onchip_mem.s1' start='0x1008000' end='0x100F800' type='altera_avalon_onchip_memory2.s1' /><slave name='alt_vip_cl_2dfir_0.control' start='0x1010000' end='0x1010800' type='alt_vip_cl_2dfir.control' /><slave name='cpu.debug_mem_slave' start='0x1011000' end='0x1011800' type='altera_nios2_gen2.debug_mem_slave' /><slave name='uart.s1' start='0x1011800' end='0x1011820' type='altera_avalon_uart.s1' /><slave name='timer_0.s1' start='0x1011820' end='0x1011840' type='altera_avalon_timer.s1' /><slave name='timer_1.s1' start='0x1011840' end='0x1011860' type='altera_avalon_timer.s1' /><slave name='keys.s1' start='0x1011860' end='0x1011870' type='altera_avalon_pio.s1' /><slave name='switches.s1' start='0x1011870' end='0x1011880' type='altera_avalon_pio.s1' /><slave name='leds_red.s1' start='0x1011880' end='0x1011890' type='altera_avalon_pio.s1' /><slave name='leds_green.s1' start='0x1011890' end='0x10118A0' type='altera_avalon_pio.s1' /><slave name='lcd.control_slave' start='0x10118A0' end='0x10118B0' type='altera_avalon_lcd_16207.control_slave' /><slave name='jtag_uart.avalon_jtag_slave' start='0x10118B0' end='0x10118B8' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='video_rgb_resampler_0.avalon_rgb_slave' start='0x10118B8' end='0x10118BC' type='altera_up_avalon_video_rgb_resampler.avalon_rgb_slave' /></address-map>]]></value>
+   <value><![CDATA[<address-map><slave name='sdram.s1' start='0x800000' end='0x1000000' type='altera_avalon_new_sdram_controller.s1' /><slave name='onchip_mem.s1' start='0x1008000' end='0x100F800' type='altera_avalon_onchip_memory2.s1' /><slave name='alt_vip_cl_2dfir_0.control' start='0x1010800' end='0x1011000' type='alt_vip_cl_2dfir.control' /><slave name='cpu.debug_mem_slave' start='0x1011000' end='0x1011800' type='altera_nios2_gen2.debug_mem_slave' /><slave name='uart.s1' start='0x1011800' end='0x1011820' type='altera_avalon_uart.s1' /><slave name='timer_0.s1' start='0x1011820' end='0x1011840' type='altera_avalon_timer.s1' /><slave name='timer_1.s1' start='0x1011840' end='0x1011860' type='altera_avalon_timer.s1' /><slave name='keys.s1' start='0x1011860' end='0x1011870' type='altera_avalon_pio.s1' /><slave name='switches.s1' start='0x1011870' end='0x1011880' type='altera_avalon_pio.s1' /><slave name='leds_red.s1' start='0x1011880' end='0x1011890' type='altera_avalon_pio.s1' /><slave name='leds_green.s1' start='0x1011890' end='0x10118A0' type='altera_avalon_pio.s1' /><slave name='lcd.control_slave' start='0x10118A0' end='0x10118B0' type='altera_avalon_lcd_16207.control_slave' /><slave name='jtag_uart.avalon_jtag_slave' start='0x10118B0' end='0x10118B8' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='video_rgb_resampler_0.avalon_rgb_slave' start='0x10118B8' end='0x10118BC' type='altera_up_avalon_video_rgb_resampler.avalon_rgb_slave' /></address-map>]]></value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -4433,7 +4433,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>alt_vip_cl_2dfir_0</moduleName>
     <slaveName>control</slaveName>
     <name>alt_vip_cl_2dfir_0.control</name>
-    <baseAddress>16842752</baseAddress>
+    <baseAddress>16844800</baseAddress>
     <span>2048</span>
    </memoryBlock>
    <memoryBlock>
@@ -16988,7 +16988,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x01010000</value>
+   <value>0x01010800</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>

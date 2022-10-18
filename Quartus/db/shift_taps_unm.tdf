@@ -1,4 +1,4 @@
---altshift_taps CBX_DECLARE_ALL_CONNECTED_PORTS="OFF" DEVICE_FAMILY="Cyclone IV E" NUMBER_OF_TAPS=1 TAP_DISTANCE=3 WIDTH=54 clken clock shiftin taps CARRY_CHAIN="MANUAL" CARRY_CHAIN_LENGTH=48 CYCLONEII_M4K_COMPATIBILITY="ON" LOW_POWER_MODE="AUTO"
+--altshift_taps CBX_DECLARE_ALL_CONNECTED_PORTS="OFF" DEVICE_FAMILY="Cyclone IV E" NUMBER_OF_TAPS=1 TAP_DISTANCE=3 WIDTH=39 clken clock shiftin taps CARRY_CHAIN="MANUAL" CARRY_CHAIN_LENGTH=48 CYCLONEII_M4K_COMPATIBILITY="ON" LOW_POWER_MODE="AUTO"
 --VERSION_BEGIN 18.1 cbx_altdpram 2018:09:12:13:04:24:SJ cbx_altera_counter 2018:09:12:13:04:24:SJ cbx_altera_syncram 2018:09:12:13:04:24:SJ cbx_altera_syncram_nd_impl 2018:09:12:13:04:24:SJ cbx_altshift_taps 2018:09:12:13:04:24:SJ cbx_altsyncram 2018:09:12:13:04:24:SJ cbx_cycloneii 2018:09:12:13:04:24:SJ cbx_lpm_add_sub 2018:09:12:13:04:24:SJ cbx_lpm_compare 2018:09:12:13:04:24:SJ cbx_lpm_counter 2018:09:12:13:04:24:SJ cbx_lpm_decode 2018:09:12:13:04:24:SJ cbx_lpm_mux 2018:09:12:13:04:24:SJ cbx_mgl 2018:09:12:13:10:36:SJ cbx_nadder 2018:09:12:13:04:24:SJ cbx_stratix 2018:09:12:13:04:24:SJ cbx_stratixii 2018:09:12:13:04:24:SJ cbx_stratixiii 2018:09:12:13:04:24:SJ cbx_stratixv 2018:09:12:13:04:24:SJ cbx_util_mgl 2018:09:12:13:04:24:SJ  VERSION_END
 
 
@@ -17,8 +17,8 @@
 --  refer to the applicable agreement for further details.
 
 
-FUNCTION altsyncram_9l31 (address_a[1..0], address_b[1..0], clock0, clock1, clocken0, clocken1, data_a[53..0], wren_a)
-RETURNS ( q_b[53..0]);
+FUNCTION altsyncram_dl31 (address_a[1..0], address_b[1..0], clock0, clock1, clocken0, clocken1, data_a[38..0], wren_a)
+RETURNS ( q_b[38..0]);
 FUNCTION add_sub_24e (dataa[1..0], datab[1..0])
 RETURNS ( result[1..0]);
 FUNCTION cntr_6pf (clk_en, clock)
@@ -29,12 +29,12 @@ SUBDESIGN shift_taps_unm
 ( 
 	clken	:	input;
 	clock	:	input;
-	shiftin[53..0]	:	input;
-	shiftout[53..0]	:	output;
-	taps[53..0]	:	output;
+	shiftin[38..0]	:	input;
+	shiftout[38..0]	:	output;
+	taps[38..0]	:	output;
 ) 
 VARIABLE 
-	altsyncram4 : altsyncram_9l31;
+	altsyncram4 : altsyncram_dl31;
 	dffe3a[1..0] : dffe;
 	add_sub2 : add_sub_24e;
 	cntr1 : cntr_6pf;
@@ -57,7 +57,7 @@ BEGIN
 	cntr1.clk_en = clken;
 	cntr1.clock = clock;
 	rdaddress[] = ( (! dffe3a[1..1].q), dffe3a[0..0].q);
-	shiftout[53..0] = altsyncram4.q_b[53..0];
+	shiftout[38..0] = altsyncram4.q_b[38..0];
 	taps[] = altsyncram4.q_b[];
 END;
 --VALID FILE

@@ -1,6 +1,0 @@
-16:28:46 **** Incremental Build of configuration Nios II for project task3_final ****
-make all 
-make: *** No rule to make target `all'.  Stop.
-
-16:28:46 Build Finished (took 144ms)
-

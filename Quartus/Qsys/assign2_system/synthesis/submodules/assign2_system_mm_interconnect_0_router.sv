@@ -136,7 +136,7 @@ module assign2_system_mm_interconnect_0_router
     // -------------------------------------------------------
     localparam PAD0 = log2ceil(64'h1000000 - 64'h800000); 
     localparam PAD1 = log2ceil(64'h1010000 - 64'h1008000); 
-    localparam PAD2 = log2ceil(64'h1010800 - 64'h1010000); 
+    localparam PAD2 = log2ceil(64'h1011000 - 64'h1010800); 
     localparam PAD3 = log2ceil(64'h1011800 - 64'h1011000); 
     localparam PAD4 = log2ceil(64'h1011820 - 64'h1011800); 
     localparam PAD5 = log2ceil(64'h1011840 - 64'h1011820); 
@@ -218,8 +218,8 @@ module assign2_system_mm_interconnect_0_router
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 7;
     end
 
-    // ( 0x1010000 .. 0x1010800 )
-    if ( {address[RG:PAD2],{PAD2{1'b0}}} == 25'h1010000   ) begin
+    // ( 0x1010800 .. 0x1011000 )
+    if ( {address[RG:PAD2],{PAD2{1'b0}}} == 25'h1010800   ) begin
             src_channel = 14'b00000000000100;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 0;
     end
