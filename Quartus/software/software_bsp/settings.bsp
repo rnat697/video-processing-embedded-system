@@ -2,10 +2,10 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>18/10/2022 3:51:56 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1666061516565</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>18/10/2022 4:50:36 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1666065036189</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>H:\Documents\GitHub\video-processing-group-10\Quartus\software\software_bsp</BspGeneratedLocation>
-        <BspSettingsFile>.\settings.bsp</BspSettingsFile>
+        <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\assign2_system.sopcinfo</SopcDesignFile>
         <JdiFile>default</JdiFile>
         <Cpu>cpu</Cpu>

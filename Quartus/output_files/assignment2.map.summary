@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Tue Oct 18 15:48:57 2022
+Analysis & Synthesis Status : Successful - Tue Oct 18 16:47:38 2022
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 Revision Name : assignment2
 Top-level Entity Name : assignment2
 Family : Cyclone IV E
-Total logic elements : 10,776
-    Total combinational functions : 8,151
+Total logic elements : 10,778
+    Total combinational functions : 8,153
     Dedicated logic registers : 6,444
 Total registers : 6444
 Total pins : 130

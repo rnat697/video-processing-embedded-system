@@ -1,12 +1,12 @@
-Fitter Status : Successful - Tue Oct 18 15:49:53 2022
+Fitter Status : Successful - Tue Oct 18 16:48:33 2022
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 Revision Name : assignment2
 Top-level Entity Name : assignment2
 Family : Cyclone IV E
 Device : EP4CE115F29C7
 Timing Models : Final
-Total logic elements : 9,641 / 114,480 ( 8 % )
-    Total combinational functions : 8,156 / 114,480 ( 7 % )
+Total logic elements : 9,668 / 114,480 ( 8 % )
+    Total combinational functions : 8,158 / 114,480 ( 7 % )
     Dedicated logic registers : 6,336 / 114,480 ( 6 % )
 Total registers : 6404
 Total pins : 130 / 529 ( 25 % )

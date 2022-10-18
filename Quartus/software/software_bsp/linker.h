@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu' in SOPC Builder design 'assign2_system'
  * SOPC Builder design path: ../../assign2_system.sopcinfo
  *
- * Generated: Tue Oct 18 15:51:58 NZDT 2022
+ * Generated: Tue Oct 18 16:50:37 NZDT 2022
  */
 
 /*

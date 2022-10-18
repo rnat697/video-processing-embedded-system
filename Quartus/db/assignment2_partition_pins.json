@@ -12,10 +12,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "LCD_E",
-					"strict" : false
-				},
-				{
 					"name" : "UART_TXD",
 					"strict" : false
 				},
@@ -45,6 +41,10 @@
 				},
 				{
 					"name" : "VGA_HS",
+					"strict" : false
+				},
+				{
+					"name" : "LCD_EN",
 					"strict" : false
 				},
 				{
