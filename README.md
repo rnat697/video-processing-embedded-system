@@ -4,7 +4,7 @@ Assignment =2 has starter files.
 
 Qsys is generated.
 
-This was a Microcomputers and Embedded Systems (COMPSYS 303) course assignment to implement an embedded system on DE2-115 board using a Nios II processor, some video processing IP cores, and a few other peripherals. The implemented system can apply simple image processing filters on a video stream and output the results through the VGA output on the board. 
+This was a Microcomputers and Embedded Systems (COMPSYS 303 2022) course assignment to implement an embedded system on DE2-115 board using a Nios II processor, some video processing IP cores, and a few other peripherals. The implemented system can apply simple image processing filters on a video stream and output the results through the VGA output on the board. 
 
 # Contributors
 - Rachel Nataatmadja - [rnat697](https://github.com/rnat697)
