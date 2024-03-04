@@ -4,6 +4,12 @@ Assignment =2 has starter files.
 
 Qsys is generated.
 
+This was a Microcomputers and Embedded Systems (COMPSYS 303) course assignment to implement an embedded system on DE2-115 board using a Nios II processor, some video processing IP cores, and a few other peripherals. The implemented system can apply simple image processing filters on a video stream and output the results through the VGA output on the board. 
+
+# Contributors
+- Rachel Nataatmadja - [rnat697](https://github.com/rnat697)
+- Shou Miyamoto - [sm43576](https://github.com/sm43576)
+
 # How To Run 
 1. Download this zip file
 2. Open Quartus Prime and press open project. Search for assignment2.qpf project file for Quartus located in video-processing-group-10/Quartus/ folder and open the project.
